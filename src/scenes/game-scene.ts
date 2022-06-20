@@ -34,11 +34,41 @@ export class GameScene extends Phaser.Scene {
         // *****************************************************************
         // SETUP TILEMAP
         // *****************************************************************
+        this.createMap();
+        this.createTileset()
+        this.createLayer();
 
+
+        // *****************************************************************
+        // GAME OBJECTS
+        // *****************************************************************
+        this.createGameObjects();
+
+
+        this.loadObjectsFromTilemap();
+
+        // *****************************************************************
+        // COLLIDERS
+        // *****************************************************************
+        this.createColliders();
+
+
+        // *****************************************************************
+        // CAMERA
+        // *****************************************************************
+        this.createCamera();
+    }
+
+    createMap() {
         // create our tilemap from Tiled JSON
         this.map = this.make.tilemap({ key: this.registry.get('level') });
+    }
+    createTileset() {
         // add our tileset and layers to our tilemap
         this.tileset = this.map.addTilesetImage('tiles');
+    }
+    createLayer() {
+        // add our tileset and layers to our tilemap
         this.backgroundLayer = this.map.createLayer(
             'backgroundLayer',
             this.tileset,
@@ -56,10 +86,8 @@ export class GameScene extends Phaser.Scene {
 
         // set collision for tiles with the property collide set to true
         this.foregroundLayer.setCollisionByProperty({ collide: true });
-
-        // *****************************************************************
-        // GAME OBJECTS
-        // *****************************************************************
+    }
+    createGameObjects() {
         this.portals = this.add.group({
             /*classType: Portal,*/
             runChildUpdate: true
@@ -88,12 +116,9 @@ export class GameScene extends Phaser.Scene {
             /*classType: Platform,*/
             runChildUpdate: true
         });
+    }
 
-        this.loadObjectsFromTilemap();
-
-        // *****************************************************************
-        // COLLIDERS
-        // *****************************************************************
+    createColliders() {
         this.physics.add.collider(this.player, this.foregroundLayer);
         this.physics.add.collider(this.enemies, this.foregroundLayer);
         this.physics.add.collider(this.enemies, this.boxes);
@@ -139,10 +164,8 @@ export class GameScene extends Phaser.Scene {
             null,
             this
         );
-
-        // *****************************************************************
-        // CAMERA
-        // *****************************************************************
+    }
+    createCamera() {
         this.cameras.main.startFollow(this.player);
         this.cameras.main.setBounds(
             0,

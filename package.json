@@ -1,7 +1,6 @@
 {
   "name": "super-mario-land",
-  "version": "2.0.0",
-  "description": "Super Mario Land for Phaser 3 in TypeScript",
+  "description": "Super Mario Land for Phaser 3 in TypeScript cloning and enhancing for study purpose",
   "keywords": [],
   "devDependencies": {
     "expose-loader": "3.0.0",
@@ -17,17 +16,9 @@
   "scripts": {
     "dev": "webpack --mode development && webpack serve --mode development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/digitsensitive/phaser3-typescript.git"
-  },
   "author": {
-    "name": "digitsensitive",
-    "email": "digit.sensitivee@gmail.com"
+    "name": "PhucNguyen1905",
+    "email": "ngtrongphuc1905@gmail.com"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/digitsensitive/phaser3-typescript/issues"
-  },
-  "homepage": "https://github.com/digitsensitive/phaser3-typescript#readme"
+  "license": "ISC"
 }
