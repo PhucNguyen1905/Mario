@@ -1,0 +1,24 @@
+{
+  "name": "super-mario-land",
+  "version": "2.0.0",
+  "description": "Super Mario Land for Phaser 3 in TypeScript",
+  "keywords": [],
+  "devDependencies": {
+    "expose-loader": "3.0.0",
+    "ts-loader": "9.2.5",
+    "typescript": "4.3.5",
+    "webpack": "5.50.0",
+    "webpack-cli": "4.7.2",
+    "webpack-dev-server": "3.11.2"
+  },
+  "dependencies": {
+    "phaser": "3.55.2"
+  },
+  "scripts": {
+    "dev": "webpack --mode development && webpack serve --mode development"
+  },
+  "author": {
+    "name": "Phucnt",
+    "email": "ngtrongphuc1905@gmail.com"
+  }
+}
