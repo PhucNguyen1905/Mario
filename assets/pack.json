@@ -14,6 +14,11 @@
       },
       {
         "type": "tilemapTiledJSON",
+        "key": "level2",
+        "url": "./assets/maps/level2.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
         "key": "level1Room1",
         "url": "./assets/maps/level1Room1.json"
       },

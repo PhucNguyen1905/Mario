@@ -82,6 +82,7 @@ export class GameScene extends Phaser.Scene {
             0,
             0
         );
+        console.log(this.foregroundLayer)
         this.foregroundLayer.setName('foregroundLayer');
 
         // set collision for tiles with the property collide set to true
