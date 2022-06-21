@@ -185,6 +185,9 @@ export class GameScene extends Phaser.Scene {
 
         objects.forEach((object) => {
             if (object.type === 'portal') {
+                let dir = object.properties[0].value
+                let marioSpawnX = object.properties[1].value
+                let marioSpawnY = object.properties[2].value
                 this.portals.add(
                     new Portal({
                         scene: this,
@@ -193,9 +196,9 @@ export class GameScene extends Phaser.Scene {
                         height: object.width,
                         width: object.height,
                         spawn: {
-                            x: object.properties.marioSpawnX,
-                            y: object.properties.marioSpawnY,
-                            dir: object.properties.direction
+                            x: marioSpawnX,
+                            y: marioSpawnY,
+                            dir: dir
                         }
                     }).setName(object.name)
                 );
@@ -237,7 +240,7 @@ export class GameScene extends Phaser.Scene {
                 this.boxes.add(
                     new Box({
                         scene: this,
-                        content: object.properties.content,
+                        content: object.properties[0].value,
                         x: object.x,
                         y: object.y,
                         texture: 'box'
@@ -251,7 +254,7 @@ export class GameScene extends Phaser.Scene {
                         scene: this,
                         x: object.x,
                         y: object.y,
-                        texture: object.properties.kindOfCollectible,
+                        texture: object.properties[0].value,
                         points: 100
                     })
                 );
