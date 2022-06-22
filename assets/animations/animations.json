@@ -45,6 +45,17 @@
       "frameRate": 9
     },
     {
+      "key": "kappaWalk",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "kappa",
+        "start": 0,
+        "end": 1
+      },
+      "repeat": -1,
+      "frameRate": 9
+    },
+    {
       "key": "coin",
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",

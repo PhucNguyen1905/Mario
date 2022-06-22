@@ -1074,6 +1074,50 @@
                  "width":16,
                  "x":2376.5,
                  "y":120
+                }, 
+                {
+                 "height":16,
+                 "id":93,
+                 "name":"kappa",
+                 "rotation":0,
+                 "type":"kappa",
+                 "visible":true,
+                 "width":8,
+                 "x":409.5,
+                 "y":27.5
+                }, 
+                {
+                 "height":16,
+                 "id":94,
+                 "name":"kappa",
+                 "rotation":0,
+                 "type":"kappa",
+                 "visible":true,
+                 "width":8,
+                 "x":1509,
+                 "y":34
+                }, 
+                {
+                 "height":16,
+                 "id":95,
+                 "name":"kappa",
+                 "rotation":0,
+                 "type":"kappa",
+                 "visible":true,
+                 "width":8,
+                 "x":2212.5,
+                 "y":50.5
+                }, 
+                {
+                 "height":16,
+                 "id":96,
+                 "name":"kappa",
+                 "rotation":0,
+                 "type":"kappa",
+                 "visible":true,
+                 "width":8,
+                 "x":156.5,
+                 "y":52.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1140,7 +1184,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":93,
+ "nextobjectid":97,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.6",

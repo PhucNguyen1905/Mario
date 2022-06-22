@@ -2,6 +2,7 @@ import { Box } from '../objects/box';
 import { Brick } from '../objects/brick';
 import { Collectible } from '../objects/collectible';
 import { Goomba } from '../objects/goomba';
+import { Kappa } from '../objects/kappa';
 import { Mario } from '../objects/mario';
 import { Platform } from '../objects/platform';
 import { Portal } from '../objects/portal';
@@ -223,6 +224,16 @@ export class GameScene extends Phaser.Scene {
                         x: object.x,
                         y: object.y,
                         texture: 'goomba'
+                    })
+                );
+            }
+            if (object.type === 'kappa') {
+                this.enemies.add(
+                    new Kappa({
+                        scene: this,
+                        x: object.x,
+                        y: object.y,
+                        texture: 'kappa'
                     })
                 );
             }

@@ -107,6 +107,15 @@
         }
       },
       {
+        "type": "spritesheet",
+        "key": "kappa",
+        "url": "./assets/sprites/kappa.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 16
+        }
+      },
+      {
         "type": "image",
         "key": "platform",
         "url": "./assets/images/platform.png"
