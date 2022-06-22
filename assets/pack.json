@@ -24,6 +24,11 @@
       },
       {
         "type": "tilemapTiledJSON",
+        "key": "level4",
+        "url": "./assets/maps/level4.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
         "key": "level1Room1",
         "url": "./assets/maps/level1Room1.json"
       },
@@ -36,6 +41,11 @@
         "type": "image",
         "key": "tiles",
         "url": "./assets/tiles/tiles.png"
+      },
+      {
+        "type": "image",
+        "key": "tiles2",
+        "url": "./assets/tiles/tiles2.png"
       },
       {
         "type": "json",
