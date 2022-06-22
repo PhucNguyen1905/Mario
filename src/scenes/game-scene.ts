@@ -1,3 +1,4 @@
+import { Boss } from '../objects/boss';
 import { Box } from '../objects/box';
 import { Brick } from '../objects/brick';
 import { Collectible } from '../objects/collectible';
@@ -227,6 +228,7 @@ export class GameScene extends Phaser.Scene {
                     })
                 );
             }
+
             if (object.type === 'kappa') {
                 this.enemies.add(
                     new Kappa({
@@ -234,6 +236,17 @@ export class GameScene extends Phaser.Scene {
                         x: object.x,
                         y: object.y,
                         texture: 'kappa'
+                    })
+                );
+            }
+
+            if (object.type === 'boss') {
+                this.enemies.add(
+                    new Boss({
+                        scene: this,
+                        x: object.x,
+                        y: object.y,
+                        texture: 'boss'
                     })
                 );
             }

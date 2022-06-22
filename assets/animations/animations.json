@@ -56,6 +56,17 @@
       "frameRate": 9
     },
     {
+      "key": "bossWalk",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "boss",
+        "start": 0,
+        "end": 6
+      },
+      "repeat": -1,
+      "frameRate": 14
+    },
+    {
       "key": "coin",
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",
