@@ -20,7 +20,7 @@ export class Kappa extends Enemy {
 
                 // if kappa is moving into obstacle from map layer, turn
                 if (this.body.blocked.right || this.body.blocked.left) {
-                    this.setFlipX(true);
+                    this.setFlipX(this.body.velocity.x < 0);
                     this.speed = -this.speed;
                     this.body.velocity.x = this.speed;
                 }
