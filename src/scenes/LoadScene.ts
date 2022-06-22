@@ -1,6 +1,6 @@
 import { AnimationHelper } from '../helpers/animation-helper';
 
-export class BootScene extends Phaser.Scene {
+export class LoadScene extends Phaser.Scene {
     // helpers
     private animationHelperInstance: AnimationHelper;
 
@@ -55,7 +55,7 @@ export class BootScene extends Phaser.Scene {
     }
 
     update(): void {
-        this.scene.start('MenuScene');
+        this.scene.start('StartScene');
     }
 
     private createLoadingGraphics(): void {

@@ -1,10 +1,11 @@
-export class MenuScene extends Phaser.Scene {
+export class StartScene extends Phaser.Scene {
     private startKey: Phaser.Input.Keyboard.Key;
+    private levelKey: Phaser.Input.Keyboard.Key;
     private bitmapTexts: Phaser.GameObjects.BitmapText[] = [];
 
     constructor() {
         super({
-            key: 'MenuScene'
+            key: 'StartScene'
         });
     }
 
@@ -12,7 +13,12 @@ export class MenuScene extends Phaser.Scene {
         this.startKey = this.input.keyboard.addKey(
             Phaser.Input.Keyboard.KeyCodes.S
         );
+        this.levelKey = this.input.keyboard.addKey(
+            Phaser.Input.Keyboard.KeyCodes.L
+        );
         this.startKey.isDown = false;
+        this.levelKey.isDown = false;
+
         this.initGlobalDataManager();
     }
 
@@ -24,7 +30,16 @@ export class MenuScene extends Phaser.Scene {
                 this.sys.canvas.width / 2 - 22,
                 105,
                 'font',
-                'START',
+                'START - S',
+                8
+            )
+        );
+        this.bitmapTexts.push(
+            this.add.bitmapText(
+                this.sys.canvas.width / 2 - 22,
+                125,
+                'font',
+                'LEVEL - L',
                 8
             )
         );
@@ -36,11 +51,16 @@ export class MenuScene extends Phaser.Scene {
             this.scene.start('GameScene');
             this.scene.bringToTop('HUDScene');
         }
+        if (this.levelKey.isDown) {
+            console.log(123)
+            this.scene.start('LevelScene');
+
+        }
     }
 
     private initGlobalDataManager(): void {
         this.registry.set('time', 400);
-        this.registry.set('level', 'level4');
+        this.registry.set('level', 'level1');
         this.registry.set('world', '1-1');
         this.registry.set('worldTime', 'WORLD TIME');
         this.registry.set('score', 0);
@@ -49,4 +69,5 @@ export class MenuScene extends Phaser.Scene {
         this.registry.set('spawn', { x: 12, y: 44, dir: 'down' });
         this.registry.set('marioSize', 'small');
     }
+
 }
