@@ -2,6 +2,7 @@ import { Boss } from '../objects/boss';
 import { Box } from '../objects/box';
 import { Brick } from '../objects/brick';
 import { Collectible } from '../objects/collectible';
+import { Enemy } from '../objects/enemy';
 import { Goomba } from '../objects/goomba';
 import { Kappa } from '../objects/kappa';
 import { Mario } from '../objects/mario';
@@ -212,8 +213,11 @@ export class GameScene extends Phaser.Scene {
             if (object.type === 'player') {
                 this.player = new Mario({
                     scene: this,
-                    x: this.registry.get('spawn').x,
-                    y: this.registry.get('spawn').y,
+                    // x: this.registry.get('spawn').x,
+                    // y: this.registry.get('spawn').y,
+                    // texture: 'mario'
+                    x: object.x,
+                    y: object.y,
                     texture: 'mario'
                 });
             }
@@ -241,14 +245,20 @@ export class GameScene extends Phaser.Scene {
             }
 
             if (object.type === 'boss') {
+                const boss = new Boss({
+                    scene: this,
+                    x: object.x,
+                    y: object.y,
+                    texture: 'boss'
+                })
                 this.enemies.add(
-                    new Boss({
-                        scene: this,
-                        x: object.x,
-                        y: object.y,
-                        texture: 'boss'
-                    })
+                    boss
                 );
+                this.physics.add.overlap(this.player, boss.hammers, () => {
+                    if (this.player.getVulnerable()) {
+                        this.player.gotHit();
+                    }
+                })
             }
 
             if (object.type === 'brick') {
@@ -330,7 +340,7 @@ export class GameScene extends Phaser.Scene {
      * @param _player [Mario]
      * @param _enemy  [Enemy]
      */
-    private handlePlayerEnemyOverlap(_player: Mario, _enemy: Goomba): void {
+    private handlePlayerEnemyOverlap(_player: Mario, _enemy: Enemy): void {
         if (_player.body.touching.down && _enemy.body.touching.up) {
             // player hit enemy on top
             _player.bounceUpAfterHitEnemyOnHead();

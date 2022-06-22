@@ -67,6 +67,17 @@
       "frameRate": 14
     },
     {
+      "key": "hammerFly",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "hammer",
+        "start": 0,
+        "end": 3
+      },
+      "repeat": -1,
+      "frameRate": 20
+    },
+    {
       "key": "coin",
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",

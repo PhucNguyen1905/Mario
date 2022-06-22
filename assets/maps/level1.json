@@ -21,8 +21,8 @@
                  "type":"box",
                  "visible":true,
                  "width":8,
-                 "x":40,
-                 "y":88
+                 "x":88.3333333333333,
+                 "y":98.6666666666667
                 }, 
                 {
                  "height":8,
@@ -1209,17 +1209,6 @@
                  "width":16,
                  "x":2377.33333333333,
                  "y":120
-                }, 
-                {
-                 "height":36,
-                 "id":299,
-                 "name":"boss",
-                 "rotation":0,
-                 "type":"boss",
-                 "visible":true,
-                 "width":32,
-                 "x":138,
-                 "y":89
                 }],
          "opacity":1,
          "type":"objectgroup",

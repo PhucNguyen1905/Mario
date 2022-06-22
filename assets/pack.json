@@ -125,6 +125,15 @@
         }
       },
       {
+        "type": "spritesheet",
+        "key": "hammer",
+        "url": "./assets/sprites/hammer.png",
+        "frameConfig": {
+          "frameWidth": 16,
+          "frameHeight": 16
+        }
+      },
+      {
         "type": "image",
         "key": "platform",
         "url": "./assets/images/platform.png"
