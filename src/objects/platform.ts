@@ -6,6 +6,8 @@ export class Platform extends Phaser.GameObjects.Image {
     // variables
     private currentScene: Phaser.Scene;
     private tweenProps: any;
+    private previousX: number;
+    private previousY: number;
 
     constructor(aParams: IPlatformConstructor) {
         super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
@@ -13,6 +15,8 @@ export class Platform extends Phaser.GameObjects.Image {
         // variables
         this.currentScene = aParams.scene;
         this.tweenProps = aParams.tweenProps;
+        this.previousX = aParams.x;
+        this.previousY = aParams.y;
 
         this.initImage();
         this.initTween();
@@ -37,8 +41,15 @@ export class Platform extends Phaser.GameObjects.Image {
             props: this.tweenProps,
             ease: 'Power0',
             yoyo: true,
-            repeat: -1
+            repeat: -1,
+            onUpdate: () => {
+                this.body.velocity.x = this.body.position.x - this.previousX;
+                this.body.velocity.y = this.body.position.y - this.previousY;
+                this.previousX = this.body.position.x;
+                this.previousY = this.body.position.y;
+            }
         });
+
     }
 
     update(): void { }

@@ -1,5 +1,6 @@
 import { ISpriteConstructor } from '../interfaces/sprite.interface';
 import { Fireball } from './fireball';
+import { Platform } from './platform';
 
 export class Mario extends Phaser.GameObjects.Sprite {
     body: Phaser.Physics.Arcade.Body;
@@ -10,9 +11,14 @@ export class Mario extends Phaser.GameObjects.Sprite {
     private acceleration: number;
     private isJumping: boolean;
     private isDying: boolean;
+
+    public isOnPlatform: boolean;
+    public currentPlatform: Platform;
+
     private isFireable: boolean;
     private countFireball: number;
     private maxNoFireball: number;
+
     private isVulnerable: boolean;
     private vulnerableCounter: number;
     fireballs: Phaser.GameObjects.Group;
@@ -42,9 +48,12 @@ export class Mario extends Phaser.GameObjects.Sprite {
         this.acceleration = 500;
         this.isJumping = false;
         this.isDying = false;
+        this.isOnPlatform = false;
+
         this.isFireable = false;
         this.countFireball = 0;
         this.maxNoFireball = 3;
+
         this.isVulnerable = true;
         this.vulnerableCounter = 100;
         this.fireballs = this.currentScene.add.group({
@@ -90,6 +99,8 @@ export class Mario extends Phaser.GameObjects.Sprite {
         if (!this.isDying) {
             this.handleInput();
             this.handleAnimations();
+            this.handelStandingOnPlatform();
+
         } else {
             this.setFrame(12);
             if (this.y > this.currentScene.sys.canvas.height) {
@@ -153,9 +164,18 @@ export class Mario extends Phaser.GameObjects.Sprite {
     private handleThrowFireballInput() {
         this.currentScene.input.keyboard.on('keyup-X', this.throwFireball, this)
     }
+    public handelStandingOnPlatform() {
+        if (this.isOnPlatform && this.currentPlatform) {
+            this.body.position.x += this.currentPlatform.body.velocity.x;
+            this.body.position.y += this.currentPlatform.body.velocity.y;
+
+            this.isOnPlatform = false;
+            this.currentPlatform = null;
+        }
+    }
 
     private handleAnimations(): void {
-        if (this.body.velocity.y !== 0) {
+        if (this.body.velocity.y !== 0 && !this.isOnPlatform) {
             // mario is jumping or falling
             this.anims.stop();
             if (this.marioSize === 'small') {

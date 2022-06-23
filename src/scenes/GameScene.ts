@@ -492,6 +492,8 @@ export class GameScene extends Phaser.Scene {
             platform.body.touching.up &&
             player.body.touching.down
         ) {
+            player.isOnPlatform = true;
+            player.currentPlatform = platform;
         }
     }
 }
