@@ -190,8 +190,8 @@ export class GameScene extends Phaser.Scene {
         );
     }
 
-    update(time: number, delta: number): void {
-        this.player.update(time, delta);
+    update(): void {
+        this.player.update();
     }
 
     private loadObjectsFromTilemap(): void {

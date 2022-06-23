@@ -11,7 +11,6 @@ export class Mario extends Phaser.GameObjects.Sprite {
     private isJumping: boolean;
     private isDying: boolean;
     private isFireable: boolean;
-    private timeFireballReset: number;
     private countFireball: number;
     private maxNoFireball: number;
     private isVulnerable: boolean;
@@ -44,7 +43,6 @@ export class Mario extends Phaser.GameObjects.Sprite {
         this.isJumping = false;
         this.isDying = false;
         this.isFireable = false;
-        this.timeFireballReset = 0;
         this.countFireball = 0;
         this.maxNoFireball = 3;
         this.isVulnerable = true;
@@ -66,6 +64,16 @@ export class Mario extends Phaser.GameObjects.Sprite {
         ]);
         this.handleThrowFireballInput();
 
+        // Create fireball counter
+        this.currentScene.time.addEvent({
+            callback: () => {
+                this.countFireball = 0;
+            },
+            callbackScope: this,
+            delay: 1500,
+            loop: true
+        })
+
         // physics
         this.currentScene.physics.world.enable(this);
         this.adjustPhysicBodyToSmallSize();
@@ -77,17 +85,11 @@ export class Mario extends Phaser.GameObjects.Sprite {
         return this.currentScene.input.keyboard.addKey(key);
     }
 
-    update(time: number, delta: number): void {
+
+    update(): void {
         if (!this.isDying) {
             this.handleInput();
             this.handleAnimations();
-
-            this.timeFireballReset += delta;
-
-            if (this.timeFireballReset > 1500) {
-                this.timeFireballReset = 0;
-                this.countFireball = 0;
-            }
         } else {
             this.setFrame(12);
             if (this.y > this.currentScene.sys.canvas.height) {

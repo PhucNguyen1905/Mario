@@ -6,7 +6,6 @@ export class Boss extends Enemy {
     body: Phaser.Physics.Arcade.Body;
     hammers: Phaser.GameObjects.Group;
     THROWING_TIME: number = 1000;
-    countThrow: number = 0;
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams);
@@ -20,6 +19,14 @@ export class Boss extends Enemy {
             /*classType: Portal,*/
             runChildUpdate: true
         });
+
+        // Create fireball counter
+        this.currentScene.time.addEvent({
+            callback: this.throwHammer,
+            callbackScope: this,
+            delay: this.THROWING_TIME,
+            loop: true
+        })
     }
     getHammers() {
         return this.hammers;
@@ -31,12 +38,6 @@ export class Boss extends Enemy {
                 // boss is still alive
                 // add speed to velocity x
                 this.body.setVelocityX(this.speed);
-                this.countThrow += delta;
-                console.log(delta)
-                if (this.countThrow > this.THROWING_TIME) {
-                    this.throwHammer();
-                    this.countThrow = 0;
-                }
 
                 // if boss is moving into obstacle from map layer, turn
                 if (this.body.blocked.right || this.body.blocked.left) {
