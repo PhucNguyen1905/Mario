@@ -1110,6 +1110,39 @@
                  "width":8,
                  "x":568,
                  "y":73.6666666666667
+                }, 
+                {
+                 "height":16,
+                 "id":415,
+                 "name":"flower_monster",
+                 "rotation":0,
+                 "type":"flower_monster",
+                 "visible":true,
+                 "width":8,
+                 "x":620.333333333333,
+                 "y":72.3333333333333
+                }, 
+                {
+                 "height":16,
+                 "id":416,
+                 "name":"flower_monster",
+                 "rotation":0,
+                 "type":"flower_monster",
+                 "visible":true,
+                 "width":8,
+                 "x":828.666666666667,
+                 "y":112.333333333333
+                }, 
+                {
+                 "height":16,
+                 "id":417,
+                 "name":"flower_monster",
+                 "rotation":0,
+                 "type":"flower_monster",
+                 "visible":true,
+                 "width":8,
+                 "x":1657.66666666667,
+                 "y":101
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1146,7 +1179,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":414,
+ "nextobjectid":418,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.6",

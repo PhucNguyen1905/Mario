@@ -1209,17 +1209,6 @@
                  "width":16,
                  "x":2377.33333333333,
                  "y":120
-                }, 
-                {
-                 "height":16,
-                 "id":303,
-                 "name":"flower_monster",
-                 "rotation":0,
-                 "type":"flower_monster",
-                 "visible":true,
-                 "width":8,
-                 "x":220.181818181818,
-                 "y":97.7272727272727
                 }],
          "opacity":1,
          "type":"objectgroup",

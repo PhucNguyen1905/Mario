@@ -155,11 +155,6 @@ export class Mario extends Phaser.GameObjects.Sprite {
             this.isJumping = true;
         }
 
-        // // handle fireball
-        // if (this.keys.get('FIRE').isDown) {
-        //     // Fireball
-        //     this.throwFireball();
-        // }
     }
     private handleThrowFireballInput() {
         this.currentScene.input.keyboard.on('keyup-X', this.throwFireball, this)
