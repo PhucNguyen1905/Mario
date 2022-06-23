@@ -453,7 +453,7 @@ export class GameScene extends Phaser.Scene {
                 y: _portal.getPortalDestination().y,
                 dir: _portal.getPortalDestination().dir
             });
-
+            this.registry.set('time', 400);
             // restart the game scene
             this.scene.restart();
         } else if (_portal.name === 'exit') {

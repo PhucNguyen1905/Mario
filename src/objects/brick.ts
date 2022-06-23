@@ -30,7 +30,7 @@ export class Brick extends Phaser.GameObjects.Sprite {
     }
 
     update(): void {
-        if (this.body.touching.down) {
+        if (this.body.touching.down && this.currentScene.registry.get('marioSize') == 'big') {
             // something touches the downside of the brick: probably mario?
             for (let i = -2; i < 2; i++) {
                 // create smaller bricks

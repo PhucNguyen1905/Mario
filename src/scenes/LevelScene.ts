@@ -69,32 +69,33 @@ export class LevelScene extends Phaser.Scene {
         if (this.oneKey.isDown) {
             this.registry.set('level', 'level1');
             this.registry.set('world', '1-1');
-            this.scene.start('HUDScene');
-            this.scene.start('GameScene');
-            this.scene.bringToTop('HUDScene');
+
+            this.play()
         }
         if (this.twoKey.isDown) {
             this.registry.set('level', 'level2');
             this.registry.set('world', '1-2');
-            this.scene.start('HUDScene');
-            this.scene.start('GameScene');
-            this.scene.bringToTop('HUDScene');
+
+            this.play()
         }
         if (this.threeKey.isDown) {
             this.registry.set('level', 'level3');
             this.registry.set('world', '1-3');
-            this.scene.start('HUDScene');
-            this.scene.start('GameScene');
-            this.scene.bringToTop('HUDScene');
+
+            this.play()
         }
         if (this.fourKey.isDown) {
             this.registry.set('level', 'level4');
             this.registry.set('world', '1-4');
-            this.scene.start('HUDScene');
-            this.scene.start('GameScene');
-            this.scene.bringToTop('HUDScene');
+
+            this.play()
         }
 
+    }
+    play() {
+        this.scene.start('HUDScene');
+        this.scene.start('GameScene');
+        this.scene.bringToTop('HUDScene');
     }
 
 

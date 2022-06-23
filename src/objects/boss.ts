@@ -32,7 +32,7 @@ export class Boss extends Enemy {
         return this.hammers;
     }
 
-    update(time: number, delta: number): void {
+    update(): void {
         if (!this.isDying) {
             if (this.isActivated) {
                 // boss is still alive

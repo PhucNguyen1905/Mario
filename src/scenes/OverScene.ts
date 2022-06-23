@@ -45,6 +45,12 @@ export class OverScene extends Phaser.Scene {
 
     update(): void {
         if (this.retryKey.isDown) {
+            this.registry.set('score', 0);
+            this.registry.set('coins', 0);
+            this.registry.set('lives', 2);
+            this.registry.set('time', 400);
+
+            this.registry.set('marioSize', 'small');
             this.scene.start('HUDScene');
             this.scene.start('GameScene');
             this.scene.bringToTop('HUDScene');
