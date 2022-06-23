@@ -3,6 +3,7 @@ import { Box } from '../objects/box';
 import { Brick } from '../objects/brick';
 import { Collectible } from '../objects/collectible';
 import { Enemy } from '../objects/enemy';
+import { Fireball } from '../objects/fireball';
 import { Goomba } from '../objects/goomba';
 import { Kappa } from '../objects/kappa';
 import { Mario } from '../objects/mario';
@@ -87,7 +88,6 @@ export class GameScene extends Phaser.Scene {
             0,
             0
         );
-        console.log(this.foregroundLayer)
         this.foregroundLayer.setName('foregroundLayer');
 
         // set collision for tiles with the property collide set to true
@@ -126,6 +126,7 @@ export class GameScene extends Phaser.Scene {
 
     createColliders() {
         this.physics.add.collider(this.player, this.foregroundLayer);
+        this.physics.add.collider(this.player.fireballs, this.foregroundLayer);
         this.physics.add.collider(this.enemies, this.foregroundLayer);
         this.physics.add.collider(this.enemies, this.boxes);
         this.physics.add.collider(this.enemies, this.bricks);
@@ -138,6 +139,14 @@ export class GameScene extends Phaser.Scene {
             null,
             this
         );
+
+        this.physics.add.overlap(
+            this.player.fireballs,
+            this.enemies,
+            this.handleFireballEnemy,
+            null,
+            this
+        )
 
         this.physics.add.overlap(
             this.player,
@@ -340,6 +349,20 @@ export class GameScene extends Phaser.Scene {
      * @param _player [Mario]
      * @param _enemy  [Enemy]
      */
+    private handleFireballEnemy(fireball: Fireball, _enemy: Enemy): void {
+        fireball.collideEnemy();
+        _enemy.gotHitFromBulletOrMarioHasStar();
+        // this.add.tween({
+        //     targets: _enemy,
+        //     props: { alpha: 0 },
+        //     duration: 1000,
+        //     ease: 'Power0',
+        //     yoyo: false,
+        //     onComplete: function () {
+        //         _enemy.isDead();
+        //     }
+        // });
+    }
     private handlePlayerEnemyOverlap(_player: Mario, _enemy: Enemy): void {
         if (_player.body.touching.down && _enemy.body.touching.up) {
             // player hit enemy on top

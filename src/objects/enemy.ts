@@ -60,4 +60,5 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     }
     isDead() { }
     gotHitOnHead() { }
+    gotHitFromBulletOrMarioHasStar() { }
 }

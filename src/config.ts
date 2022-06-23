@@ -3,6 +3,7 @@ import { GameScene } from './scenes/GameScene';
 import { HUDScene } from './scenes/HudScene';
 import { StartScene } from './scenes/StartScene';
 import { LevelScene } from './scenes/LevelScene';
+import { OverScene } from './scenes/OverScene';
 
 export const GameConfig: Phaser.Types.Core.GameConfig = {
     title: 'Super Mario Land',
@@ -13,7 +14,7 @@ export const GameConfig: Phaser.Types.Core.GameConfig = {
     zoom: 5,
     type: Phaser.AUTO,
     parent: 'game',
-    scene: [LoadScene, StartScene, LevelScene, HUDScene, GameScene],
+    scene: [LoadScene, StartScene, LevelScene, HUDScene, GameScene, OverScene],
     input: {
         keyboard: true
     },

@@ -75,7 +75,18 @@
         "end": 3
       },
       "repeat": -1,
-      "frameRate": 20
+      "frameRate": 18
+    },
+    {
+      "key": "fireballFly",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "fireball",
+        "start": 0,
+        "end": 3
+      },
+      "repeat": -1,
+      "frameRate": 18
     },
     {
       "key": "coin",

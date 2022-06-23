@@ -1,4 +1,5 @@
 import { ISpriteConstructor } from '../interfaces/sprite.interface';
+import { Fireball } from './fireball';
 
 export class Mario extends Phaser.GameObjects.Sprite {
     body: Phaser.Physics.Arcade.Body;
@@ -9,8 +10,10 @@ export class Mario extends Phaser.GameObjects.Sprite {
     private acceleration: number;
     private isJumping: boolean;
     private isDying: boolean;
+    private isFireable: boolean;
     private isVulnerable: boolean;
     private vulnerableCounter: number;
+    fireballs: Phaser.GameObjects.Group;
 
     // input
     private keys: Map<string, Phaser.Input.Keyboard.Key>;
@@ -37,8 +40,12 @@ export class Mario extends Phaser.GameObjects.Sprite {
         this.acceleration = 500;
         this.isJumping = false;
         this.isDying = false;
+        this.isFireable = false;
         this.isVulnerable = true;
         this.vulnerableCounter = 100;
+        this.fireballs = this.currentScene.add.group({
+            runChildUpdate: true
+        })
 
         // sprite
         this.setOrigin(0.5, 0.5);
@@ -51,6 +58,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
             ['DOWN', this.addKey('DOWN')],
             ['JUMP', this.addKey('SPACE')]
         ]);
+        this.handleThrowFireballInput();
 
         // physics
         this.currentScene.physics.world.enable(this);
@@ -72,7 +80,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
             if (this.y > this.currentScene.sys.canvas.height) {
                 this.currentScene.scene.stop('GameScene');
                 this.currentScene.scene.stop('HUDScene');
-                this.currentScene.scene.start('StartScene');
+                this.currentScene.scene.start('OverScene');
             }
         }
 
@@ -120,6 +128,15 @@ export class Mario extends Phaser.GameObjects.Sprite {
             this.body.setVelocityY(-180);
             this.isJumping = true;
         }
+
+        // // handle fireball
+        // if (this.keys.get('FIRE').isDown) {
+        //     // Fireball
+        //     this.throwFireball();
+        // }
+    }
+    handleThrowFireballInput() {
+        this.currentScene.input.keyboard.on('keyup-X', this.throwFireball, this)
     }
 
     private handleAnimations(): void {
@@ -186,6 +203,14 @@ export class Mario extends Phaser.GameObjects.Sprite {
     private adjustPhysicBodyToBigSize(): void {
         this.body.setSize(8, 16);
         this.body.setOffset(4, 0);
+    }
+
+    throwFireball() {
+        if (!this.isDying) {
+            const fb = new Fireball({ scene: this.currentScene, x: this.x, y: this.y, texture: 'fireball' })
+            console.log(123)
+            this.fireballs.add(fb)
+        }
     }
 
     public bounceUpAfterHitEnemyOnHead(): void {

@@ -60,8 +60,6 @@ export class StartScene extends Phaser.Scene {
 
     private initGlobalDataManager(): void {
         this.registry.set('time', 400);
-        this.registry.set('level', 'level1');
-        this.registry.set('world', '1-1');
         this.registry.set('worldTime', 'WORLD TIME');
         this.registry.set('score', 0);
         this.registry.set('coins', 0);

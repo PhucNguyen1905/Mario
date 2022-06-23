@@ -49,7 +49,7 @@ export class Goomba extends Enemy {
         this.showAndAddScore();
     }
 
-    protected gotHitFromBulletOrMarioHasStar(): void {
+    public gotHitFromBulletOrMarioHasStar(): void {
         this.isDying = true;
         this.body.setVelocityX(20);
         this.body.setVelocityY(-20);

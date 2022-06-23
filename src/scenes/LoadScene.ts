@@ -55,6 +55,8 @@ export class LoadScene extends Phaser.Scene {
     }
 
     update(): void {
+        this.registry.set('level', 'level1');
+        this.registry.set('world', '1-1');
         this.scene.start('StartScene');
     }
 
