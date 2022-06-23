@@ -346,23 +346,24 @@ export class GameScene extends Phaser.Scene {
 
     /**
      * Player <-> Enemy Overlap
-     * @param _player [Mario]
+     * @param fireball [Mario]
      * @param _enemy  [Enemy]
      */
     private handleFireballEnemy(fireball: Fireball, _enemy: Enemy): void {
         fireball.collideEnemy();
         _enemy.gotHitFromBulletOrMarioHasStar();
-        // this.add.tween({
-        //     targets: _enemy,
-        //     props: { alpha: 0 },
-        //     duration: 1000,
-        //     ease: 'Power0',
-        //     yoyo: false,
-        //     onComplete: function () {
-        //         _enemy.isDead();
-        //     }
-        // });
+        this.add.tween({
+            targets: _enemy,
+            props: { alpha: 0 },
+            duration: 1000,
+            ease: 'Power0',
+            yoyo: false,
+            onComplete: function () {
+                _enemy.isDead();
+            }
+        });
     }
+
     private handlePlayerEnemyOverlap(_player: Mario, _enemy: Enemy): void {
         if (_player.body.touching.down && _enemy.body.touching.up) {
             // player hit enemy on top
