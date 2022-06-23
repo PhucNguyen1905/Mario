@@ -8,6 +8,7 @@ export class Kappa extends Enemy {
         super(aParams);
         this.speed = -20;
         this.dyingScoreValue = 150;
+        this.name = 'kappa';
         this.body.setSize(8, 16)
     }
 
@@ -55,6 +56,7 @@ export class Kappa extends Enemy {
         this.body.setVelocityX(20);
         this.body.setVelocityY(-20);
         this.setFlipY(true);
+        this.showAndAddScore();
     }
 
     public isDead(): void {

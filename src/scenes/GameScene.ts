@@ -4,6 +4,7 @@ import { Brick } from '../objects/brick';
 import { Collectible } from '../objects/collectible';
 import { Enemy } from '../objects/enemy';
 import { Fireball } from '../objects/fireball';
+import { FlowerMonster } from '../objects/flowerMonster';
 import { Goomba } from '../objects/goomba';
 import { Kappa } from '../objects/kappa';
 import { Mario } from '../objects/mario';
@@ -253,6 +254,17 @@ export class GameScene extends Phaser.Scene {
                 );
             }
 
+            if (object.type === 'flower_monster') {
+                this.enemies.add(
+                    new FlowerMonster({
+                        scene: this,
+                        x: object.x,
+                        y: object.y,
+                        texture: 'flower_monster'
+                    })
+                );
+            }
+
             if (object.type === 'boss') {
                 const boss = new Boss({
                     scene: this,
@@ -365,7 +377,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     private handlePlayerEnemyOverlap(_player: Mario, _enemy: Enemy): void {
-        if (_player.body.touching.down && _enemy.body.touching.up) {
+        if (_player.body.touching.down && _enemy.body.touching.up && _enemy.name != 'flower_monster') {
             // player hit enemy on top
             _player.bounceUpAfterHitEnemyOnHead();
             _enemy.gotHitOnHead();

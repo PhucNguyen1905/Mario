@@ -8,6 +8,7 @@ export class Goomba extends Enemy {
         super(aParams);
         this.speed = -20;
         this.dyingScoreValue = 100;
+        this.name = 'goomba';
     }
 
     update(): void {
@@ -54,6 +55,7 @@ export class Goomba extends Enemy {
         this.body.setVelocityX(20);
         this.body.setVelocityY(-20);
         this.setFlipY(true);
+        this.showAndAddScore();
     }
 
     public isDead(): void {

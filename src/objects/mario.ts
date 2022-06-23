@@ -244,7 +244,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
         this.body.setOffset(4, 0);
     }
 
-    throwFireball() {
+    private throwFireball() {
         if (!this.isDying && this.countFireball < this.maxNoFireball && this.isFireable) {
             const fb = new Fireball({ scene: this.currentScene, x: this.x, y: this.y, texture: 'fireball' })
             this.fireballs.add(fb)

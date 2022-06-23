@@ -9,6 +9,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     protected isDying: boolean;
     protected speed: number;
     protected dyingScoreValue: number;
+    public name: string;
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);

@@ -11,6 +11,7 @@ export class Boss extends Enemy {
         super(aParams);
         this.speed = -20;
         this.dyingScoreValue = 1500;
+        this.name = 'boss';
         this.body.setSize(32, 36)
         this.initHammers();
     }
