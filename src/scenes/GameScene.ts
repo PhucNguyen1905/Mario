@@ -346,7 +346,7 @@ export class GameScene extends Phaser.Scene {
 
     /**
      * Player <-> Enemy Overlap
-     * @param fireball [Mario]
+     * @param fireball [Fireball]
      * @param _enemy  [Enemy]
      */
     private handleFireballEnemy(fireball: Fireball, _enemy: Enemy): void {
@@ -469,6 +469,7 @@ export class GameScene extends Phaser.Scene {
     ): void {
         switch (_collectible.texture.key) {
             case 'flower': {
+                _player.marioHasFlower();
                 break;
             }
             case 'mushroom': {

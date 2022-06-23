@@ -218,6 +218,10 @@ export class Mario extends Phaser.GameObjects.Sprite {
         }
     }
 
+    public marioHasFlower(): void {
+        this.isFireable = true;
+    }
+
     public growMario(): void {
         this.marioSize = 'big';
         this.currentScene.registry.set('marioSize', 'big');
@@ -241,7 +245,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
     }
 
     throwFireball() {
-        if (!this.isDying && this.countFireball < this.maxNoFireball) {
+        if (!this.isDying && this.countFireball < this.maxNoFireball && this.isFireable) {
             const fb = new Fireball({ scene: this.currentScene, x: this.x, y: this.y, texture: 'fireball' })
             this.fireballs.add(fb)
             this.countFireball += 1;
