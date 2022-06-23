@@ -50,7 +50,6 @@ export class OverScene extends Phaser.Scene {
             this.scene.bringToTop('HUDScene');
         }
         if (this.exitKey.isDown) {
-            console.log(123)
             this.scene.start('StartScene');
 
         }

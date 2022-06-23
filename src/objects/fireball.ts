@@ -34,6 +34,7 @@ export class Fireball extends Phaser.GameObjects.Sprite {
         this.y += -1;
         if (this.y > GameConfig.height) {
             this.destroy()
+            return
         }
         this.body.setVelocityX(this.speed);
 

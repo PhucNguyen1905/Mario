@@ -11,6 +11,9 @@ export class Mario extends Phaser.GameObjects.Sprite {
     private isJumping: boolean;
     private isDying: boolean;
     private isFireable: boolean;
+    private timeFireballReset: number;
+    private countFireball: number;
+    private maxNoFireball: number;
     private isVulnerable: boolean;
     private vulnerableCounter: number;
     fireballs: Phaser.GameObjects.Group;
@@ -41,6 +44,9 @@ export class Mario extends Phaser.GameObjects.Sprite {
         this.isJumping = false;
         this.isDying = false;
         this.isFireable = false;
+        this.timeFireballReset = 0;
+        this.countFireball = 0;
+        this.maxNoFireball = 3;
         this.isVulnerable = true;
         this.vulnerableCounter = 100;
         this.fireballs = this.currentScene.add.group({
@@ -71,10 +77,17 @@ export class Mario extends Phaser.GameObjects.Sprite {
         return this.currentScene.input.keyboard.addKey(key);
     }
 
-    update(): void {
+    update(time: number, delta: number): void {
         if (!this.isDying) {
             this.handleInput();
             this.handleAnimations();
+
+            this.timeFireballReset += delta;
+
+            if (this.timeFireballReset > 1500) {
+                this.timeFireballReset = 0;
+                this.countFireball = 0;
+            }
         } else {
             this.setFrame(12);
             if (this.y > this.currentScene.sys.canvas.height) {
@@ -135,7 +148,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
         //     this.throwFireball();
         // }
     }
-    handleThrowFireballInput() {
+    private handleThrowFireballInput() {
         this.currentScene.input.keyboard.on('keyup-X', this.throwFireball, this)
     }
 
@@ -206,9 +219,10 @@ export class Mario extends Phaser.GameObjects.Sprite {
     }
 
     throwFireball() {
-        if (!this.isDying) {
+        if (!this.isDying && this.countFireball < this.maxNoFireball) {
             const fb = new Fireball({ scene: this.currentScene, x: this.x, y: this.y, texture: 'fireball' })
             this.fireballs.add(fb)
+            this.countFireball += 1;
         }
     }
 

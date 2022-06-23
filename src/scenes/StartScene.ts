@@ -52,7 +52,6 @@ export class StartScene extends Phaser.Scene {
             this.scene.bringToTop('HUDScene');
         }
         if (this.levelKey.isDown) {
-            console.log(123)
             this.scene.start('LevelScene');
 
         }
