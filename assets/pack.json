@@ -61,8 +61,8 @@
         "key": "box",
         "url": "./assets/sprites/box.png",
         "frameConfig": {
-          "frameWidth": 8,
-          "frameHeight": 8
+          "frameWidth": 16,
+          "frameHeight": 16
         }
       },
       {
@@ -70,8 +70,8 @@
         "key": "brick",
         "url": "./assets/sprites/brick.png",
         "frameConfig": {
-          "frameWidth": 8,
-          "frameHeight": 8
+          "frameWidth": 16,
+          "frameHeight": 16
         }
       },
       {
@@ -88,8 +88,8 @@
         "key": "coin",
         "url": "./assets/sprites/coin.png",
         "frameConfig": {
-          "frameWidth": 8,
-          "frameHeight": 8
+          "frameWidth": 16,
+          "frameHeight": 16
         }
       },
       {
