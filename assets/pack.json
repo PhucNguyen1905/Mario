@@ -79,8 +79,8 @@
         "key": "rotatingCoin",
         "url": "./assets/sprites/rotatingCoin.png",
         "frameConfig": {
-          "frameWidth": 8,
-          "frameHeight": 8
+          "frameWidth": 16,
+          "frameHeight": 16
         }
       },
       {
@@ -161,8 +161,8 @@
         "key": "coin2",
         "url": "./assets/collectibles/coin2.png",
         "frameConfig": {
-          "frameWidth": 8,
-          "frameHeight": 8
+          "frameWidth": 16,
+          "frameHeight": 16
         }
       },
       {
@@ -188,8 +188,8 @@
         "key": "mushroom",
         "url": "./assets/collectibles/mushroom.png",
         "frameConfig": {
-          "frameWidth": 8,
-          "frameHeight": 8
+          "frameWidth": 16,
+          "frameHeight": 16
         }
       },
       {
