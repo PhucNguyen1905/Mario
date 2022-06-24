@@ -120,15 +120,15 @@
                  "y":64.3333335
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":73,
                  "name":"platformMovingUpAndDown",
                  "rotation":0,
                  "type":"platformMovingUpAndDown",
                  "visible":true,
                  "width":48,
-                 "x":803.332,
-                 "y":131.9166335
+                 "x":799.332,
+                 "y":127.9166335
                 }, 
                 {
                  "height":24,
@@ -205,8 +205,8 @@
                  "type":"box",
                  "visible":true,
                  "width":16,
-                 "x":1267.75,
-                 "y":47.75
+                 "x":1267.93181818182,
+                 "y":48.5681818181818
                 }, 
                 {
                  "height":16,
@@ -222,8 +222,8 @@
                  "type":"box",
                  "visible":true,
                  "width":16,
-                 "x":1321.5,
-                 "y":48.25
+                 "x":1321.95454545455,
+                 "y":48.9772727272727
                 }, 
                 {
                  "height":16,
@@ -233,8 +233,8 @@
                  "type":"brick",
                  "visible":true,
                  "width":16,
-                 "x":1285.25,
-                 "y":48.25
+                 "x":1285.88636363636,
+                 "y":48.6136363636364
                 }, 
                 {
                  "height":16,
@@ -244,8 +244,8 @@
                  "type":"brick",
                  "visible":true,
                  "width":16,
-                 "x":1304.5,
-                 "y":48.25
+                 "x":1303.68181818182,
+                 "y":48.7045454545455
                 }, 
                 {
                  "height":16,
@@ -283,8 +283,8 @@
                  "type":"collectible",
                  "visible":true,
                  "width":16,
-                 "x":1488.5,
-                 "y":127.5
+                 "x":1490,
+                 "y":126.5
                 }, 
                 {
                  "height":16,
@@ -301,7 +301,7 @@
                  "visible":true,
                  "width":16,
                  "x":1489.5,
-                 "y":144
+                 "y":175.5
                 }, 
                 {
                  "height":16,
@@ -318,7 +318,7 @@
                  "visible":true,
                  "width":16,
                  "x":1490,
-                 "y":164.5
+                 "y":160.5
                 }, 
                 {
                  "height":16,
@@ -335,7 +335,7 @@
                  "visible":true,
                  "width":16,
                  "x":1490,
-                 "y":182.5
+                 "y":144.5
                 }, 
                 {
                  "height":16,
@@ -351,93 +351,8 @@
                  "type":"collectible",
                  "visible":true,
                  "width":16,
-                 "x":1490,
-                 "y":201
-                }, 
-                {
-                 "height":16,
-                 "id":136,
-                 "name":"collectible",
-                 "properties":[
-                        {
-                         "name":"kindOfCollectible",
-                         "type":"string",
-                         "value":"coin2"
-                        }],
-                 "rotation":0,
-                 "type":"collectible",
-                 "visible":true,
-                 "width":16,
-                 "x":1805.75,
-                 "y":134.25
-                }, 
-                {
-                 "height":16,
-                 "id":137,
-                 "name":"collectible",
-                 "properties":[
-                        {
-                         "name":"kindOfCollectible",
-                         "type":"string",
-                         "value":"coin2"
-                        }],
-                 "rotation":0,
-                 "type":"collectible",
-                 "visible":true,
-                 "width":16,
-                 "x":1806.75,
-                 "y":150.75
-                }, 
-                {
-                 "height":16,
-                 "id":138,
-                 "name":"collectible",
-                 "properties":[
-                        {
-                         "name":"kindOfCollectible",
-                         "type":"string",
-                         "value":"coin2"
-                        }],
-                 "rotation":0,
-                 "type":"collectible",
-                 "visible":true,
-                 "width":16,
-                 "x":1807.25,
-                 "y":171.25
-                }, 
-                {
-                 "height":16,
-                 "id":139,
-                 "name":"collectible",
-                 "properties":[
-                        {
-                         "name":"kindOfCollectible",
-                         "type":"string",
-                         "value":"coin2"
-                        }],
-                 "rotation":0,
-                 "type":"collectible",
-                 "visible":true,
-                 "width":16,
-                 "x":1807.25,
-                 "y":189.25
-                }, 
-                {
-                 "height":16,
-                 "id":140,
-                 "name":"collectible",
-                 "properties":[
-                        {
-                         "name":"kindOfCollectible",
-                         "type":"string",
-                         "value":"coin2"
-                        }],
-                 "rotation":0,
-                 "type":"collectible",
-                 "visible":true,
-                 "width":16,
-                 "x":1807.25,
-                 "y":207.75
+                 "x":1489,
+                 "y":192
                 }, 
                 {
                  "height":16,
@@ -474,26 +389,26 @@
                  "y":160
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":143,
                  "name":"platformMovingUpAndDown",
                  "rotation":0,
                  "type":"platformMovingUpAndDown",
                  "visible":true,
                  "width":48,
-                 "x":2308.5,
-                 "y":146.375
+                 "x":2313.5,
+                 "y":143.375
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":144,
                  "name":"platformMovingUpAndDown",
                  "rotation":0,
                  "type":"platformMovingUpAndDown",
                  "visible":true,
                  "width":48,
-                 "x":2438.833,
-                 "y":182.375
+                 "x":2448.333,
+                 "y":176.875
                 }, 
                 {
                  "height":32,
@@ -781,37 +696,37 @@
                  "y":51
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":166,
                  "name":"platformMovingLeftAndRight",
                  "rotation":0,
                  "type":"platformMovingLeftAndRight",
                  "visible":true,
                  "width":48,
-                 "x":3175,
-                 "y":99.5
+                 "x":3183.5,
+                 "y":81.5
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":167,
                  "name":"platformMovingUpAndDown",
                  "rotation":0,
                  "type":"platformMovingUpAndDown",
                  "visible":true,
                  "width":48,
-                 "x":3696.835,
-                 "y":113.5
+                 "x":3697.335,
+                 "y":111.5
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":169,
                  "name":"platformMovingLeftAndRight",
                  "rotation":0,
                  "type":"platformMovingLeftAndRight",
                  "visible":true,
                  "width":48,
-                 "x":3810.665,
-                 "y":144.1667
+                 "x":3808.665,
+                 "y":142.1667
                 }, 
                 {
                  "height":16,
@@ -882,48 +797,133 @@
                  "y":48.5
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":174,
                  "name":"platformMovingUpAndDown",
                  "rotation":0,
                  "type":"platformMovingUpAndDown",
                  "visible":true,
                  "width":48,
-                 "x":4261.59,
-                 "y":194.6665
+                 "x":4256.59,
+                 "y":192.6665
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":175,
                  "name":"platformMovingLeftAndRight",
                  "rotation":0,
                  "type":"platformMovingLeftAndRight",
                  "visible":true,
                  "width":48,
-                 "x":4478.91,
-                 "y":163.3335
+                 "x":4478.41,
+                 "y":161.3335
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":176,
                  "name":"platformMovingUpAndDown",
                  "rotation":0,
                  "type":"platformMovingUpAndDown",
                  "visible":true,
                  "width":48,
-                 "x":4367.5,
-                 "y":133
+                 "x":4368,
+                 "y":129
                 }, 
                 {
-                 "height":10,
+                 "height":16,
                  "id":177,
                  "name":"platformMovingUpAndDown",
                  "rotation":0,
                  "type":"platformMovingUpAndDown",
                  "visible":true,
                  "width":48,
-                 "x":4592.5,
-                 "y":147.5
+                 "x":4592,
+                 "y":143.5
+                }, 
+                {
+                 "height":16,
+                 "id":178,
+                 "name":"collectible",
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
+                 "rotation":0,
+                 "type":"collectible",
+                 "visible":true,
+                 "width":16,
+                 "x":1810,
+                 "y":142.25
+                }, 
+                {
+                 "height":16,
+                 "id":179,
+                 "name":"collectible",
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
+                 "rotation":0,
+                 "type":"collectible",
+                 "visible":true,
+                 "width":16,
+                 "x":1809.5,
+                 "y":191.25
+                }, 
+                {
+                 "height":16,
+                 "id":180,
+                 "name":"collectible",
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
+                 "rotation":0,
+                 "type":"collectible",
+                 "visible":true,
+                 "width":16,
+                 "x":1810,
+                 "y":176.25
+                }, 
+                {
+                 "height":16,
+                 "id":181,
+                 "name":"collectible",
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
+                 "rotation":0,
+                 "type":"collectible",
+                 "visible":true,
+                 "width":16,
+                 "x":1810,
+                 "y":160.25
+                }, 
+                {
+                 "height":16,
+                 "id":182,
+                 "name":"collectible",
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
+                 "rotation":0,
+                 "type":"collectible",
+                 "visible":true,
+                 "width":16,
+                 "x":1809,
+                 "y":207.75
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -990,7 +990,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":178,
+ "nextobjectid":183,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.6",

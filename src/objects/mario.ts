@@ -45,7 +45,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
     private initSprite() {
         // variables
         this.marioSize = this.currentScene.registry.get('marioSize');
-        this.acceleration = 800;
+        this.acceleration = 1000;
         this.isJumping = false;
         this.isDying = false;
         this.isOnPlatform = false;
@@ -86,7 +86,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
         // physics
         this.currentScene.physics.world.enable(this);
         this.adjustPhysicBodyToSmallSize();
-        this.body.maxVelocity.x = 70;
+        this.body.maxVelocity.x = 100;
         this.body.maxVelocity.y = 420;
     }
 
@@ -151,7 +151,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
 
         // handle jumping
         if (this.keys.get('JUMP').isDown && !this.isJumping) {
-            this.body.setVelocityY(-260);
+            this.body.setVelocityY(-280);
             this.isJumping = true;
         }
 

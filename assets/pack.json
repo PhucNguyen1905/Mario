@@ -170,8 +170,8 @@
         "key": "flower",
         "url": "./assets/collectibles/flower.png",
         "frameConfig": {
-          "frameWidth": 8,
-          "frameHeight": 8
+          "frameWidth": 16,
+          "frameHeight": 16
         }
       },
       {
