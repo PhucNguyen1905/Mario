@@ -18,6 +18,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
     private isFireable: boolean;
     private countFireball: number;
     private maxNoFireball: number;
+    private isFlip: number;
 
     private isVulnerable: boolean;
     private vulnerableCounter: number;
@@ -53,6 +54,8 @@ export class Mario extends Phaser.GameObjects.Sprite {
         this.isFireable = false;
         this.countFireball = 0;
         this.maxNoFireball = 3;
+        this.isFlip = 1;
+
 
         this.isVulnerable = true;
         this.vulnerableCounter = 100;
@@ -141,9 +144,11 @@ export class Mario extends Phaser.GameObjects.Sprite {
         if (this.keys.get('RIGHT').isDown) {
             this.body.setAccelerationX(this.acceleration);
             this.setFlipX(false);
+            this.isFlip = 1;
         } else if (this.keys.get('LEFT').isDown) {
             this.body.setAccelerationX(-this.acceleration);
             this.setFlipX(true);
+            this.isFlip = -1;
         } else {
             this.body.setVelocityX(0);
             this.body.setAccelerationX(0);
@@ -241,7 +246,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
 
     private throwFireball() {
         if (!this.isDying && this.countFireball < this.maxNoFireball && this.isFireable) {
-            const fb = new Fireball({ scene: this.currentScene, x: this.x, y: this.y, texture: 'fireball' })
+            const fb = new Fireball({ scene: this.currentScene, x: this.x, y: this.y, texture: 'fireball', flip: this.isFlip })
             this.fireballs.add(fb)
             this.countFireball += 1;
         }

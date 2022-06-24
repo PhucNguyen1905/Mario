@@ -6,7 +6,7 @@ export class Goomba extends Enemy {
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams);
-        this.speed = -20;
+        this.speed = -30;
         this.dyingScoreValue = 100;
         this.name = 'goomba';
     }

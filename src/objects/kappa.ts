@@ -6,7 +6,7 @@ export class Kappa extends Enemy {
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams);
-        this.speed = -20;
+        this.speed = -30;
         this.dyingScoreValue = 150;
         this.name = 'kappa';
         this.body.setSize(16, 24)

@@ -1,5 +1,5 @@
 import { GameConfig } from "../config";
-import { ISpriteConstructor } from "../interfaces/sprite.interface";
+import { IFireballConstructor } from "../interfaces/fireball.interface";
 
 export class Fireball extends Phaser.GameObjects.Sprite {
     body: Phaser.Physics.Arcade.Body;
@@ -8,11 +8,12 @@ export class Fireball extends Phaser.GameObjects.Sprite {
     private currentScene: Phaser.Scene;
     private speed: number = 200;
 
-    constructor(aParams: ISpriteConstructor) {
-        super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
+    constructor(aParams: IFireballConstructor) {
+        super(aParams.scene, aParams.x, aParams.y, aParams.texture);
 
         // variables
         this.currentScene = aParams.scene;
+        this.speed = aParams.flip * this.speed;
         this.initSprite();
         this.currentScene.add.existing(this);
     }
