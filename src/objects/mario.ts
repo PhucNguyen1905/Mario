@@ -231,12 +231,12 @@ export class Mario extends Phaser.GameObjects.Sprite {
 
     private adjustPhysicBodyToSmallSize(): void {
         this.body.setSize(16, 16);
-        this.body.setOffset(0, 8);
+        this.body.setOffset(0, 7);
     }
 
     private adjustPhysicBodyToBigSize(): void {
-        this.body.setSize(8, 16);
-        this.body.setOffset(4, 0);
+        this.body.setSize(16, 32);
+        this.body.setOffset(0, 0);
     }
 
     private throwFireball() {
