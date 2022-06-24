@@ -26,8 +26,8 @@ export class Hammer extends Phaser.GameObjects.Sprite {
         this.currentScene.physics.world.enable(this);
         this.body.setSize(16, 16);
         this.body.setAllowGravity(true);
-        this.body.setVelocityX(-100);
-        this.body.setVelocityY(-200);
+        this.body.setVelocityX(-200);
+        this.body.setVelocityY(-250);
         this.anims.play('hammerFly', true);
     }
 

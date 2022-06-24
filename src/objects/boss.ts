@@ -9,7 +9,7 @@ export class Boss extends Enemy {
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams);
-        this.speed = -20;
+        this.speed = -35;
         this.dyingScoreValue = 1500;
         this.name = 'boss';
         this.body.setSize(32, 36)
