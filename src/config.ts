@@ -21,7 +21,7 @@ export const GameConfig: Phaser.Types.Core.GameConfig = {
         default: 'arcade',
         arcade: {
             gravity: { y: 475 },
-            debug: false
+            debug: true
         }
     },
     backgroundColor: '#f8f8f8',

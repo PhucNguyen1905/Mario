@@ -9,7 +9,7 @@ export class Kappa extends Enemy {
         this.speed = -20;
         this.dyingScoreValue = 150;
         this.name = 'kappa';
-        this.body.setSize(8, 16)
+        this.body.setSize(16, 24)
     }
 
     update(): void {
@@ -48,11 +48,13 @@ export class Kappa extends Enemy {
 
     public gotHitOnHead(): void {
         this.isDying = true;
+        this.setFrame(4);
         this.showAndAddScore();
     }
 
     public gotHitFromBulletOrMarioHasStar(): void {
         this.isDying = true;
+        this.setFrame(4);
         this.body.setVelocityX(20);
         this.body.setVelocityY(-20);
         this.setFlipY(true);

@@ -15,7 +15,6 @@ export class GameScene extends Phaser.Scene {
     // tilemap
     private map: Phaser.Tilemaps.Tilemap;
     private tileset: Phaser.Tilemaps.Tileset;
-    private tilese2: Phaser.Tilemaps.Tileset;
     private backgroundLayer: Phaser.Tilemaps.TilemapLayer;
     private foregroundLayer: Phaser.Tilemaps.TilemapLayer;
 
@@ -71,14 +70,13 @@ export class GameScene extends Phaser.Scene {
     }
     createTileset() {
         // add our tileset and layers to our tilemap
-        this.tileset = this.map.addTilesetImage('tiles');
-        this.tilese2 = this.map.addTilesetImage('tiles2');
+        this.tileset = this.map.addTilesetImage('tile');
     }
     createLayer() {
         // add our tileset and layers to our tilemap
         this.backgroundLayer = this.map.createLayer(
             'backgroundLayer',
-            [this.tileset, this.tilese2],
+            this.tileset,
             0,
             0
         );
@@ -90,6 +88,7 @@ export class GameScene extends Phaser.Scene {
             0
         );
         this.foregroundLayer.setName('foregroundLayer');
+
 
         // set collision for tiles with the property collide set to true
         this.foregroundLayer.setCollisionByProperty({ collide: true });
@@ -182,13 +181,14 @@ export class GameScene extends Phaser.Scene {
         );
     }
     createCamera() {
-        this.cameras.main.startFollow(this.player);
         this.cameras.main.setBounds(
             0,
             0,
             this.map.widthInPixels,
             this.map.heightInPixels
         );
+        this.cameras.main.startFollow(this.player, true, 0.09, 0.09);
+        this.cameras.main.setZoom(2.4);
     }
 
     update(): void {
