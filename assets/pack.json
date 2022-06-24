@@ -115,8 +115,8 @@
         "key": "flower_monster",
         "url": "./assets/sprites/flower_monster.png",
         "frameConfig": {
-          "frameWidth": 8,
-          "frameHeight": 16
+          "frameWidth": 16,
+          "frameHeight": 24
         }
       },
       {

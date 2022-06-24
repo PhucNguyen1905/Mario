@@ -6,7 +6,7 @@ export class Fireball extends Phaser.GameObjects.Sprite {
 
     // variables
     private currentScene: Phaser.Scene;
-    private speed: number = 100;
+    private speed: number = 200;
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
@@ -31,7 +31,7 @@ export class Fireball extends Phaser.GameObjects.Sprite {
 
 
     update(...args: any[]): void {
-        this.y += -1;
+        this.y += -1.5;
         if (this.y > GameConfig.height) {
             this.destroy()
             return

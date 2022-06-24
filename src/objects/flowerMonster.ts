@@ -9,6 +9,7 @@ export class FlowerMonster extends Enemy {
         this.speed = -20;
         this.dyingScoreValue = 200;
         this.name = 'flower_monster'
+        this.setSize(16, 24);
         this.body.setAllowGravity(false)
         this.body.setImmovable(true)
     }
