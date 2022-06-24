@@ -430,6 +430,7 @@ export class GameScene extends Phaser.Scene {
                 }
                 case 'flower': {
                     _box.tweenBoxContent({ y: _box.y - 8 }, 200, function () {
+                        _box.getContent().y -= 8;
                         _box.getContent().anims.play('flower');
                     });
 
