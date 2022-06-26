@@ -180,6 +180,8 @@ export class Mario extends Phaser.GameObjects.Sprite {
             this.anims.stop();
             if (this.marioSize === 'small') {
                 this.setFrame(4);
+            } else if (this.marioSize === 'flower') {
+                this.setFrame(18);
             } else {
                 this.setFrame(10);
             }
@@ -193,6 +195,8 @@ export class Mario extends Phaser.GameObjects.Sprite {
             ) {
                 if (this.marioSize === 'small') {
                     this.setFrame(5);
+                } else if (this.marioSize === 'flower') {
+                    this.setFrame(19);
                 } else {
                     this.setFrame(11);
                 }
@@ -210,9 +214,19 @@ export class Mario extends Phaser.GameObjects.Sprite {
                 this.setFrame(0);
             } else {
                 if (this.keys.get('DOWN').isDown) {
-                    this.setFrame(13);
+                    if (this.marioSize === 'flower') {
+                        this.setFrame(20);
+                    } else {
+                        this.setFrame(13);
+                    }
+
                 } else {
-                    this.setFrame(6);
+                    if (this.marioSize === 'flower') {
+                        this.setFrame(14);
+                    } else {
+                        this.setFrame(6);
+                    }
+
                 }
             }
         }
@@ -220,12 +234,17 @@ export class Mario extends Phaser.GameObjects.Sprite {
 
     public marioHasFlower(): void {
         this.isFireable = true;
+        this.marioSize = 'flower';
+        this.currentScene.registry.set('marioSize', 'flower');
+        this.adjustPhysicBodyToFlowerSize();
     }
 
     public growMario(): void {
-        this.marioSize = 'big';
-        this.currentScene.registry.set('marioSize', 'big');
-        this.adjustPhysicBodyToBigSize();
+        if (!this.isFireable) {
+            this.marioSize = 'big';
+            this.currentScene.registry.set('marioSize', 'big');
+            this.adjustPhysicBodyToBigSize();
+        }
     }
 
     private shrinkMario(): void {
@@ -240,6 +259,10 @@ export class Mario extends Phaser.GameObjects.Sprite {
     }
 
     private adjustPhysicBodyToBigSize(): void {
+        this.body.setSize(16, 32);
+        this.body.setOffset(0, 0);
+    }
+    private adjustPhysicBodyToFlowerSize(): void {
         this.body.setSize(16, 32);
         this.body.setOffset(0, 0);
     }
@@ -264,7 +287,8 @@ export class Mario extends Phaser.GameObjects.Sprite {
 
     public gotHit(): void {
         this.isVulnerable = false;
-        if (this.marioSize === 'big') {
+        if (this.marioSize === 'big' || this.marioSize === 'flower') {
+            this.isFireable = false;
             this.shrinkMario();
         } else {
             // mario is dying

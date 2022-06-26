@@ -37,7 +37,7 @@
         "key": "mario",
         "url": "./assets/sprites/mario.png",
         "frameConfig": {
-          "frameWidth": 16,
+          "frameWidth": 18,
           "frameHeight": 32
         }
       },
