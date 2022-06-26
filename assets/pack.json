@@ -91,8 +91,8 @@
         "key": "kappa",
         "url": "./assets/sprites/kappa.png",
         "frameConfig": {
-          "frameWidth": 16,
-          "frameHeight": 24
+          "frameWidth": 18,
+          "frameHeight": 25
         }
       },
       {

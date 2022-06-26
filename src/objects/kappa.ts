@@ -48,13 +48,13 @@ export class Kappa extends Enemy {
 
     public gotHitOnHead(): void {
         this.isDying = true;
-        this.setFrame(4);
+        this.setFrame(2);
         this.showAndAddScore();
     }
 
     public gotHitFromBulletOrMarioHasStar(): void {
         this.isDying = true;
-        this.setFrame(4);
+        this.setFrame(2);
         this.body.setVelocityX(20);
         this.body.setVelocityY(-20);
         this.setFlipY(true);
