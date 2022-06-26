@@ -44,7 +44,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
                 this.y - 20,
                 'font',
                 this.dyingScoreValue.toString(),
-                4
+                10
             )
             .setOrigin(0, 0);
 
