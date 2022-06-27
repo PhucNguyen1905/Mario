@@ -91,6 +91,15 @@ export class Mario extends Phaser.GameObjects.Sprite {
         this.adjustPhysicBodyToSmallSize();
         this.body.maxVelocity.x = 100;
         this.body.maxVelocity.y = 420;
+
+        // Continue after passing a level
+        if (this.currentScene.registry.get('marioSize') != 'small') {
+            this.body.setSize(18, 32);
+            this.body.setOffset(0, 0);
+        } else {
+            this.body.setSize(16, 16);
+            this.body.setOffset(0, 7);
+        }
     }
 
     private addKey(key: string): Phaser.Input.Keyboard.Key {
@@ -259,11 +268,11 @@ export class Mario extends Phaser.GameObjects.Sprite {
     }
 
     private adjustPhysicBodyToBigSize(): void {
-        this.body.setSize(16, 32);
+        this.body.setSize(18, 32);
         this.body.setOffset(0, 0);
     }
     private adjustPhysicBodyToFlowerSize(): void {
-        this.body.setSize(16, 32);
+        this.body.setSize(18, 32);
         this.body.setOffset(0, 0);
     }
 
