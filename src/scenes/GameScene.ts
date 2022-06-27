@@ -457,7 +457,7 @@ export class GameScene extends Phaser.Scene {
         } else if (_portal.name === 'exit') {
             this.scene.stop('GameScene');
             this.scene.stop('HUDScene');
-            this.scene.start('MenuScene');
+            this.scene.start('StartScene');
         }
     }
 

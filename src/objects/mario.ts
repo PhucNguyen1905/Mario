@@ -133,9 +133,11 @@ export class Mario extends Phaser.GameObjects.Sprite {
     }
 
     private handleInput() {
-        if (this.y > this.currentScene.sys.canvas.height) {
+        if (this.y > this.currentScene.sys.canvas.height / 2.4) {
             // mario fell into a hole
             this.isDying = true;
+            // Play mario_die sound
+            this.currentScene.sound.play('mario_die');
         }
 
         // evaluate if player is on the floor or on object
