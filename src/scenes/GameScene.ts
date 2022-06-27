@@ -34,6 +34,11 @@ export class GameScene extends Phaser.Scene {
         });
     }
 
+    // preload() {
+    //     // Load animation tiles plugin
+    //     this.load.scenePlugin('AnimatedTiles', 'https://raw.githubusercontent.com/nkholski/phaser-animated-tiles/master/dist/AnimatedTiles.js', 'animatedTiles', 'animatedTiles');
+    // }
+
     init(): void { }
 
     create(): void {
@@ -93,6 +98,10 @@ export class GameScene extends Phaser.Scene {
 
         // set collision for tiles with the property collide set to true
         this.foregroundLayer.setCollisionByProperty({ collide: true });
+
+        // //@ts-ignore
+        // this.animatedTiles.init(this.map)
+
     }
     createGameObjects() {
         this.portals = this.add.group({

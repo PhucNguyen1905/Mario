@@ -20,6 +20,7 @@ export class Gai extends Enemy {
 
                 // if goomba is moving into obstacle from map layer, turn
                 if (this.body.blocked.right || this.body.blocked.left) {
+                    this.setFlipX(this.body.velocity.x < 0);
                     this.speed = -this.speed;
                     this.body.velocity.x = this.speed;
                 }
