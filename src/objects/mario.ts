@@ -167,6 +167,9 @@ export class Mario extends Phaser.GameObjects.Sprite {
         if (this.keys.get('JUMP').isDown && !this.isJumping) {
             this.body.setVelocityY(-280);
             this.isJumping = true;
+
+            // Play jump sound
+            this.currentScene.sound.play('jump');
         }
 
     }
@@ -302,6 +305,9 @@ export class Mario extends Phaser.GameObjects.Sprite {
         } else {
             // mario is dying
             this.isDying = true;
+            // Play mario_die sound
+            this.currentScene.sound.play('mario_die');
+
 
             // sets acceleration, velocity and speed to zero
             // stop all animations

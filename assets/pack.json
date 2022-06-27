@@ -185,6 +185,36 @@
           "frameWidth": 8,
           "frameHeight": 8
         }
+      },
+      {
+        "type": "audio",
+        "key": "throw_fireball",
+        "url": "./assets/sounds/fireball.wav"
+      },
+      {
+        "type": "audio",
+        "key": "gameover",
+        "url": "./assets/sounds/gameover.wav"
+      },
+      {
+        "type": "audio",
+        "key": "jump",
+        "url": "./assets/sounds/jump-small.wav"
+      },
+      {
+        "type": "audio",
+        "key": "mario_die",
+        "url": "./assets/sounds/mariodie.wav"
+      },
+      {
+        "type": "audio",
+        "key": "power_up",
+        "url": "./assets/sounds/up.wav"
+      },
+      {
+        "type": "audio",
+        "key": "stage_clear",
+        "url": "./assets/sounds/stage_clear.wav"
       }
     ]
   }

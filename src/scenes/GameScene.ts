@@ -461,6 +461,7 @@ export class GameScene extends Phaser.Scene {
         ) {
             // set new level and new destination for mario
             this.registry.set('level', _portal.name);
+            this.sound.play('stage_clear');
             this.registry.set('spawn', {
                 x: _portal.getPortalDestination().x,
                 y: _portal.getPortalDestination().y,
