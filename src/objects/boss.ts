@@ -80,7 +80,7 @@ export class Boss extends Enemy {
         }
     }
 
-    public gotHitFromBulletOrMarioHasStar(): void {
+    public gotHitFromBulletOrMarioFlower(): void {
         if (this.health < 0) {
             this.isDying = true;
             this.body.setVelocityX(20);

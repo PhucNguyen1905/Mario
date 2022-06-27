@@ -76,5 +76,5 @@ export class Enemy extends Phaser.GameObjects.Sprite {
         this.destroy();
     }
     gotHitOnHead() { }
-    gotHitFromBulletOrMarioHasStar() { }
+    gotHitFromBulletOrMarioFlower() { }
 }

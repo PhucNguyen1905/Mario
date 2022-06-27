@@ -40,7 +40,7 @@ export class FlowerMonster extends Enemy {
 
     }
 
-    public gotHitFromBulletOrMarioHasStar(): void {
+    public gotHitFromBulletOrMarioFlower(): void {
         this.isDying = true;
     }
 

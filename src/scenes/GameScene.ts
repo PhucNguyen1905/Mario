@@ -364,7 +364,7 @@ export class GameScene extends Phaser.Scene {
     private handleFireballEnemy(fireball: Fireball, _enemy: Enemy): void {
         this.sound.play('kick');
         fireball.collideEnemy();
-        _enemy.gotHitFromBulletOrMarioHasStar();
+        _enemy.gotHitFromBulletOrMarioFlower();
     }
 
     private handlePlayerEnemyOverlap(_player: Mario, _enemy: Enemy): void {

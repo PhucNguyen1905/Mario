@@ -52,7 +52,7 @@ export class Kappa extends Enemy {
         this.showAndAddScore();
     }
 
-    public gotHitFromBulletOrMarioHasStar(): void {
+    public gotHitFromBulletOrMarioFlower(): void {
         this.isDying = true;
         this.setFrame(2);
         this.body.setVelocityX(20);
