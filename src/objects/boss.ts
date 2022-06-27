@@ -7,6 +7,7 @@ export class Boss extends Enemy {
     hammers: Phaser.GameObjects.Group;
     health: number;
     THROWING_TIME: number = 2000;
+    event: Phaser.Time.TimerEvent;
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams);
@@ -24,7 +25,7 @@ export class Boss extends Enemy {
         });
 
         // Create hammer counter
-        this.currentScene.time.addEvent({
+        this.event = this.currentScene.time.addEvent({
             callback: this.throwHammer,
             callbackScope: this,
             delay: this.THROWING_TIME,
@@ -75,6 +76,7 @@ export class Boss extends Enemy {
             this.isDying = true;
             this.setFrame(7);
             this.showAndAddScore();
+            this.event.remove();
         } else {
             this.health -= 50
         }
@@ -86,6 +88,7 @@ export class Boss extends Enemy {
             this.body.setVelocityX(20);
             this.body.setVelocityY(-20);
             this.setFlipY(true);
+            this.event.remove();
         } else {
             this.health -= 20;
         }

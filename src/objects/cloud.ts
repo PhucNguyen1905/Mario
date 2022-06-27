@@ -4,6 +4,7 @@ import { Gai } from './gai';
 
 export class Cloud extends Enemy {
     body: Phaser.Physics.Arcade.Body;
+    event: Phaser.Time.TimerEvent;
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams);
@@ -17,7 +18,7 @@ export class Cloud extends Enemy {
     }
     initChangeDirEvent() {
         // Create fireball counter
-        this.currentScene.time.addEvent({
+        this.event = this.currentScene.time.addEvent({
             callback: () => {
                 this.speed = -this.speed;
                 this.body.velocity.x = this.speed;
@@ -70,6 +71,7 @@ export class Cloud extends Enemy {
         this.isDying = true;
         this.setFrame(1);
         this.showAndAddScore();
+        this.event.remove();
     }
 
     public gotHitFromBulletOrMarioFlower(): void {
@@ -78,6 +80,7 @@ export class Cloud extends Enemy {
         this.body.setVelocityY(-20);
         this.setFlipY(true);
         this.showAndAddScore();
+        this.event.remove();
     }
 
 }

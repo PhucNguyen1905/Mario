@@ -1185,6 +1185,17 @@
                  "width":17,
                  "x":4481,
                  "y":33
+                }, 
+                {
+                 "height":29,
+                 "id":369,
+                 "name":"cloud",
+                 "rotation":0,
+                 "type":"cloud",
+                 "visible":true,
+                 "width":17,
+                 "x":1839,
+                 "y":17
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1251,7 +1262,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":369,
+ "nextobjectid":370,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.6",
