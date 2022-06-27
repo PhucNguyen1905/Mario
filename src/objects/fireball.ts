@@ -28,6 +28,16 @@ export class Fireball extends Phaser.GameObjects.Sprite {
         this.body.setSize(8, 8);
         this.body.setAllowGravity(true);
         this.anims.play('fireballFly', true);
+
+        // Create fireball counter
+        this.currentScene.time.addEvent({
+            callback: () => {
+                this.destroy();
+            },
+            callbackScope: this,
+            delay: 4000,
+            loop: false
+        })
     }
 
 

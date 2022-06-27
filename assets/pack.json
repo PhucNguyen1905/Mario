@@ -97,6 +97,24 @@
       },
       {
         "type": "spritesheet",
+        "key": "cloud",
+        "url": "./assets/sprites/cloud.png",
+        "frameConfig": {
+          "frameWidth": 17,
+          "frameHeight": 29
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "gai",
+        "url": "./assets/sprites/gai.png",
+        "frameConfig": {
+          "frameWidth": 18,
+          "frameHeight": 18
+        }
+      },
+      {
+        "type": "spritesheet",
         "key": "flower_monster",
         "url": "./assets/sprites/flower_monster.png",
         "frameConfig": {

@@ -67,6 +67,28 @@
       "frameRate": 9
     },
     {
+      "key": "gaiWalk",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "gai",
+        "start": 0,
+        "end": 1
+      },
+      "repeat": -1,
+      "frameRate": 9
+    },
+    {
+      "key": "cloudWalk",
+      "frames": {
+        "typeOfGeneration": "generateFrameNumbers",
+        "key": "cloud",
+        "start": 0,
+        "end": 2
+      },
+      "repeat": -1,
+      "frameRate": 5
+    },
+    {
       "key": "bossWalk",
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",

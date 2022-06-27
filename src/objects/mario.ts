@@ -93,13 +93,17 @@ export class Mario extends Phaser.GameObjects.Sprite {
         this.body.maxVelocity.y = 420;
 
         // Continue after passing a level
-        if (this.currentScene.registry.get('marioSize') != 'small') {
+        if (this.marioSize != 'small') {
+            if (this.marioSize === 'flower') {
+                this.isFireable = true;
+            }
             this.body.setSize(18, 32);
             this.body.setOffset(0, 0);
         } else {
             this.body.setSize(16, 16);
             this.body.setOffset(0, 7);
         }
+
     }
 
     private addKey(key: string): Phaser.Input.Keyboard.Key {

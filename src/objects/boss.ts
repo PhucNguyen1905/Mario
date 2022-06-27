@@ -23,7 +23,7 @@ export class Boss extends Enemy {
             runChildUpdate: true
         });
 
-        // Create fireball counter
+        // Create hammer counter
         this.currentScene.time.addEvent({
             callback: this.throwHammer,
             callbackScope: this,
