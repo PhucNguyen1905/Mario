@@ -78,7 +78,7 @@ export class Boss extends Enemy {
             this.showAndAddScore();
             this.event.remove();
         } else {
-            this.health -= 50
+            this.health -= 100
         }
     }
 
@@ -88,9 +88,10 @@ export class Boss extends Enemy {
             this.body.setVelocityX(20);
             this.body.setVelocityY(-20);
             this.setFlipY(true);
+            this.showAndAddScore();
             this.event.remove();
         } else {
-            this.health -= 20;
+            this.health -= 25;
         }
 
     }

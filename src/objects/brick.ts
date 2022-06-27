@@ -30,7 +30,7 @@ export class Brick extends Phaser.GameObjects.Sprite {
     }
 
     update(): void {
-        if (this.body.touching.down && this.currentScene.registry.get('marioSize') == 'big') {
+        if (this.body.touching.down && this.currentScene.registry.get('marioSize') != 'small') {
             // something touches the downside of the brick: probably mario?
             this.currentScene.sound.play('brick');
             for (let i = -2; i < 2; i++) {
