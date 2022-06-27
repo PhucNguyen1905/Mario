@@ -1,10 +1,11 @@
 import { ISpriteConstructor } from '../interfaces/sprite.interface';
+import { GameScene } from '../scenes/GameScene';
 
 export class Enemy extends Phaser.GameObjects.Sprite {
     body: Phaser.Physics.Arcade.Body;
 
     // variables
-    protected currentScene: Phaser.Scene;
+    protected currentScene: GameScene;
     protected isActivated: boolean;
     protected isDying: boolean;
     protected speed: number;

@@ -86,7 +86,7 @@
         "end": 2
       },
       "repeat": -1,
-      "frameRate": 5
+      "frameRate": 3
     },
     {
       "key": "bossWalk",

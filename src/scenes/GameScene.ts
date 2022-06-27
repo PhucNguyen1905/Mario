@@ -1,6 +1,7 @@
 import { Boss } from '../objects/boss';
 import { Box } from '../objects/box';
 import { Brick } from '../objects/brick';
+import { Cloud } from '../objects/cloud';
 import { Collectible } from '../objects/collectible';
 import { Enemy } from '../objects/enemy';
 import { Fireball } from '../objects/fireball';
@@ -254,6 +255,17 @@ export class GameScene extends Phaser.Scene {
                 );
             }
 
+            if (object.type === 'cloud') {
+                this.enemies.add(
+                    new Cloud({
+                        scene: this,
+                        x: object.x,
+                        y: object.y,
+                        texture: 'cloud'
+                    })
+                );
+            }
+
             if (object.type === 'flower_monster') {
                 this.enemies.add(
                     new FlowerMonster({
@@ -356,6 +368,10 @@ export class GameScene extends Phaser.Scene {
         });
     }
 
+    public addEnemy(enemy: Enemy) {
+        this.enemies.add(enemy);
+    }
+
     /**
      * Player <-> Enemy Overlap
      * @param fireball [Fireball]
@@ -368,7 +384,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     private handlePlayerEnemyOverlap(_player: Mario, _enemy: Enemy): void {
-        if (_player.body.touching.down && _enemy.body.touching.up && _enemy.name != 'flower_monster') {
+        if (_player.body.touching.down && _enemy.body.touching.up && _enemy.name != 'flower_monster' && _enemy.name != 'gai') {
             // player hit enemy on top
             this.sound.play('kick');
             _player.bounceUpAfterHitEnemyOnHead();

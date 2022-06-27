@@ -1,5 +1,7 @@
+import { GameScene } from "../scenes/GameScene";
+
 export interface ISpriteConstructor {
-    scene: Phaser.Scene;
+    scene: GameScene;
     x: number;
     y: number;
     texture: string;
