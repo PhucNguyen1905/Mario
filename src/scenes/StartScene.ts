@@ -28,19 +28,19 @@ export class StartScene extends Phaser.Scene {
         this.bitmapTexts.push(
             this.add.bitmapText(
                 this.sys.canvas.width / 2 - 22,
-                105,
+                this.sys.canvas.height / 2 + 5,
                 'font',
                 'START - S',
-                8
+                30
             )
         );
         this.bitmapTexts.push(
             this.add.bitmapText(
                 this.sys.canvas.width / 2 - 22,
-                125,
+                this.sys.canvas.height / 2 + 55,
                 'font',
                 'LEVEL - L',
-                8
+                30
             )
         );
     }

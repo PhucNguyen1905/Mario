@@ -4,7 +4,7 @@ export class LevelScene extends Phaser.Scene {
     private threeKey: Phaser.Input.Keyboard.Key;
     private fourKey: Phaser.Input.Keyboard.Key;
 
-    private levels: number[] = [1, 2, 3, 4];
+    private levels: number[] = [1, 2, 3];
     private bitmapTexts: Phaser.GameObjects.BitmapText[] = [];
     startKey: any;
 
@@ -37,29 +37,26 @@ export class LevelScene extends Phaser.Scene {
         this.threeKey = this.input.keyboard.addKey(
             Phaser.Input.Keyboard.KeyCodes.THREE
         );
-        this.fourKey = this.input.keyboard.addKey(
-            Phaser.Input.Keyboard.KeyCodes.FOUR
-        );
     }
 
     createText() {
         this.bitmapTexts.push(
             this.add.bitmapText(
                 this.sys.canvas.width / 2 - 22,
-                105,
+                this.sys.canvas.height / 2 + 5,
                 'font',
                 'Level',
-                8
+                30
             )
         )
         for (const lv of this.levels) {
             this.bitmapTexts.push(
                 this.add.bitmapText(
-                    this.sys.canvas.width / 2 + (lv - 3) * 22,
-                    125,
+                    this.sys.canvas.width / 2 + (lv - 3) * 50 + 75,
+                    this.sys.canvas.height / 2 + 50,
                     'font',
                     lv.toString(),
-                    8
+                    30
                 )
             )
         }
@@ -81,12 +78,6 @@ export class LevelScene extends Phaser.Scene {
         if (this.threeKey.isDown) {
             this.registry.set('level', 'level3');
             this.registry.set('world', '1-3');
-
-            this.play()
-        }
-        if (this.fourKey.isDown) {
-            this.registry.set('level', 'level4');
-            this.registry.set('world', '1-4');
 
             this.play()
         }
