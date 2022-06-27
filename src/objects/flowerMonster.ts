@@ -44,7 +44,4 @@ export class FlowerMonster extends Enemy {
         this.isDying = true;
     }
 
-    public isDead(): void {
-        this.destroy();
-    }
 }

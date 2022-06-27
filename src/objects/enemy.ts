@@ -35,6 +35,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     }
 
     protected showAndAddScore(): void {
+        this.addDeadTween();
         this.currentScene.registry.values.score += this.dyingScoreValue;
         this.currentScene.events.emit('scoreChanged');
 
@@ -54,12 +55,26 @@ export class Enemy extends Phaser.GameObjects.Sprite {
             duration: 800,
             ease: 'Power0',
             yoyo: false,
-            onComplete: function () {
+            onComplete: () => {
                 scoreText.destroy();
+                this.isDead();
             }
         });
     }
-    isDead() { }
+
+    addDeadTween() {
+        this.currentScene.add.tween({
+            targets: this,
+            props: { alpha: 0 },
+            duration: 1000,
+            ease: 'Power0',
+            yoyo: false
+        });
+    }
+
+    isDead() {
+        this.destroy();
+    }
     gotHitOnHead() { }
     gotHitFromBulletOrMarioHasStar() { }
 }

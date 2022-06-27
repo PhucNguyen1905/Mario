@@ -179,7 +179,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
     public handelStandingOnPlatform() {
         if (this.isOnPlatform && this.currentPlatform) {
             this.body.position.x += this.currentPlatform.body.velocity.x;
-            this.body.position.y += this.currentPlatform.body.velocity.y;
+            this.body.position.y += this.currentPlatform.body.velocity.y - 0.1;
 
             this.isOnPlatform = false;
             this.currentPlatform = null;

@@ -58,7 +58,4 @@ export class Goomba extends Enemy {
         this.showAndAddScore();
     }
 
-    public isDead(): void {
-        this.destroy();
-    }
 }

@@ -43,7 +43,7 @@ export class LevelScene extends Phaser.Scene {
         this.bitmapTexts.push(
             this.add.bitmapText(
                 this.sys.canvas.width / 2 - 22,
-                this.sys.canvas.height / 2 + 5,
+                this.sys.canvas.height / 2 + 55,
                 'font',
                 'Level',
                 30
@@ -53,7 +53,7 @@ export class LevelScene extends Phaser.Scene {
             this.bitmapTexts.push(
                 this.add.bitmapText(
                     this.sys.canvas.width / 2 + (lv - 3) * 50 + 75,
-                    this.sys.canvas.height / 2 + 50,
+                    this.sys.canvas.height / 2 + 100,
                     'font',
                     lv.toString(),
                     30

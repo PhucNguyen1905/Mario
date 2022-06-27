@@ -365,16 +365,6 @@ export class GameScene extends Phaser.Scene {
         this.sound.play('kick');
         fireball.collideEnemy();
         _enemy.gotHitFromBulletOrMarioHasStar();
-        this.add.tween({
-            targets: _enemy,
-            props: { alpha: 0 },
-            duration: 1000,
-            ease: 'Power0',
-            yoyo: false,
-            onComplete: function () {
-                _enemy.isDead();
-            }
-        });
     }
 
     private handlePlayerEnemyOverlap(_player: Mario, _enemy: Enemy): void {
@@ -383,16 +373,6 @@ export class GameScene extends Phaser.Scene {
             this.sound.play('kick');
             _player.bounceUpAfterHitEnemyOnHead();
             _enemy.gotHitOnHead();
-            this.add.tween({
-                targets: _enemy,
-                props: { alpha: 0 },
-                duration: 1000,
-                ease: 'Power0',
-                yoyo: false,
-                onComplete: function () {
-                    _enemy.isDead();
-                }
-            });
         } else {
             // player got hit from the side or on the head
             if (_player.getVulnerable()) {
@@ -418,7 +398,7 @@ export class GameScene extends Phaser.Scene {
                     _box.tweenBoxContent({ y: _box.y - 40, alpha: 0 }, 700, function () {
                         _box.getContent().destroy();
                     });
-                    this.sound.play('çoin');
+                    this.sound.play('coin');
 
                     _box.addCoinAndScore(1, 100);
                     break;
@@ -427,7 +407,7 @@ export class GameScene extends Phaser.Scene {
                     _box.tweenBoxContent({ y: _box.y - 40, alpha: 0 }, 700, function () {
                         _box.getContent().destroy();
                     });
-                    this.sound.play('çoin');
+                    this.sound.play('coin');
 
                     _box.addCoinAndScore(1, 100);
                     break;

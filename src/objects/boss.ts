@@ -5,12 +5,14 @@ import { Hammer } from './hammer';
 export class Boss extends Enemy {
     body: Phaser.Physics.Arcade.Body;
     hammers: Phaser.GameObjects.Group;
+    health: number;
     THROWING_TIME: number = 1000;
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams);
         this.speed = -35;
         this.dyingScoreValue = 1500;
+        this.health = 1000;
         this.name = 'boss';
         this.body.setSize(32, 36)
         this.initHammers();
@@ -69,23 +71,32 @@ export class Boss extends Enemy {
     }
 
     public gotHitOnHead(): void {
-        this.isDying = true;
-        this.setFrame(7);
-        this.showAndAddScore();
+        if (this.health < 0) {
+            this.isDying = true;
+            this.setFrame(7);
+            this.showAndAddScore();
+        } else {
+            this.health -= 50
+        }
     }
 
     public gotHitFromBulletOrMarioHasStar(): void {
-        this.isDying = true;
-        this.body.setVelocityX(20);
-        this.body.setVelocityY(-20);
-        this.setFlipY(true);
+        if (this.health < 0) {
+            this.isDying = true;
+            this.body.setVelocityX(20);
+            this.body.setVelocityY(-20);
+            this.setFlipY(true);
+        } else {
+            this.health -= 20;
+        }
+
     }
 
-    public isDead(): void {
-        this.destroy();
-    }
     throwHammer() {
-        const hammer = new Hammer({ scene: this.currentScene, x: this.x, y: this.y, texture: 'hammer' });
-        this.hammers.add(hammer);
+        if (this.health > 0) {
+            const hammer = new Hammer({ scene: this.currentScene, x: this.x, y: this.y, texture: 'hammer' });
+            this.hammers.add(hammer);
+        }
+
     }
 }

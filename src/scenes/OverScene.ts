@@ -26,7 +26,7 @@ export class OverScene extends Phaser.Scene {
         this.bitmapTexts.push(
             this.add.bitmapText(
                 this.sys.canvas.width / 2 - 22,
-                this.sys.canvas.height / 2 + 5,
+                this.sys.canvas.height / 2 + 55,
                 'font',
                 'retry - R',
                 30
@@ -35,7 +35,7 @@ export class OverScene extends Phaser.Scene {
         this.bitmapTexts.push(
             this.add.bitmapText(
                 this.sys.canvas.width / 2 - 22,
-                this.sys.canvas.height / 2 + 55,
+                this.sys.canvas.height / 2 + 105,
                 'font',
                 'Exit - E',
                 30

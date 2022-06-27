@@ -61,7 +61,4 @@ export class Kappa extends Enemy {
         this.showAndAddScore();
     }
 
-    public isDead(): void {
-        this.destroy();
-    }
 }
