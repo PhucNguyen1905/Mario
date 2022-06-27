@@ -6,6 +6,7 @@ export class Collectible extends Phaser.GameObjects.Sprite {
     // variables
     private currentScene: Phaser.Scene;
     private points: number;
+    private key: string;
 
     constructor(aParams: ICollectibleConstructor) {
         super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
@@ -13,6 +14,7 @@ export class Collectible extends Phaser.GameObjects.Sprite {
         // variables
         this.currentScene = aParams.scene;
         this.points = aParams.points;
+        this.key = aParams.texture;
         this.initSprite();
         this.currentScene.add.existing(this);
     }
@@ -31,6 +33,9 @@ export class Collectible extends Phaser.GameObjects.Sprite {
     update(): void { }
 
     public collected(): void {
+        if (this.key == 'coin2') {
+            this.currentScene.sound.play('coin');
+        }
         this.destroy();
         this.currentScene.registry.values.score += this.points;
         this.currentScene.events.emit('scoreChanged');

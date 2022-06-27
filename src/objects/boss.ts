@@ -6,7 +6,7 @@ export class Boss extends Enemy {
     body: Phaser.Physics.Arcade.Body;
     hammers: Phaser.GameObjects.Group;
     health: number;
-    THROWING_TIME: number = 1000;
+    THROWING_TIME: number = 2000;
 
     constructor(aParams: ISpriteConstructor) {
         super(aParams);
