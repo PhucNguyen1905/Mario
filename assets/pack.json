@@ -215,6 +215,26 @@
         "type": "audio",
         "key": "stage_clear",
         "url": "./assets/sounds/stage_clear.wav"
+      },
+      {
+        "type": "audio",
+        "key": "kick",
+        "url": "./assets/sounds/kick.wav"
+      },
+      {
+        "type": "audio",
+        "key": "coin",
+        "url": "./assets/sounds/coin.wav"
+      },
+      {
+        "type": "audio",
+        "key": "flower_up",
+        "url": "./assets/sounds/flower_up.wav"
+      },
+      {
+        "type": "audio",
+        "key": "brick",
+        "url": "./assets/sounds/brick.wav"
       }
     ]
   }

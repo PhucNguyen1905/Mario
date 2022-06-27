@@ -362,6 +362,7 @@ export class GameScene extends Phaser.Scene {
      * @param _enemy  [Enemy]
      */
     private handleFireballEnemy(fireball: Fireball, _enemy: Enemy): void {
+        this.sound.play('kick');
         fireball.collideEnemy();
         _enemy.gotHitFromBulletOrMarioHasStar();
         this.add.tween({
@@ -379,6 +380,7 @@ export class GameScene extends Phaser.Scene {
     private handlePlayerEnemyOverlap(_player: Mario, _enemy: Enemy): void {
         if (_player.body.touching.down && _enemy.body.touching.up && _enemy.name != 'flower_monster') {
             // player hit enemy on top
+            this.sound.play('kick');
             _player.bounceUpAfterHitEnemyOnHead();
             _enemy.gotHitOnHead();
             this.add.tween({
@@ -416,6 +418,7 @@ export class GameScene extends Phaser.Scene {
                     _box.tweenBoxContent({ y: _box.y - 40, alpha: 0 }, 700, function () {
                         _box.getContent().destroy();
                     });
+                    this.sound.play('çoin');
 
                     _box.addCoinAndScore(1, 100);
                     break;
@@ -424,6 +427,7 @@ export class GameScene extends Phaser.Scene {
                     _box.tweenBoxContent({ y: _box.y - 40, alpha: 0 }, 700, function () {
                         _box.getContent().destroy();
                     });
+                    this.sound.play('çoin');
 
                     _box.addCoinAndScore(1, 100);
                     break;
@@ -483,10 +487,12 @@ export class GameScene extends Phaser.Scene {
     ): void {
         switch (_collectible.texture.key) {
             case 'flower': {
+                this.sound.play('flower_up')
                 _player.marioHasFlower();
                 break;
             }
             case 'mushroom': {
+                this.sound.play('power_up')
                 _player.growMario();
                 break;
             }
