@@ -12,7 +12,7 @@ export class Platform extends Phaser.GameObjects.Image {
     public type: string;
 
     constructor(aParams: IPlatformConstructor) {
-        super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
+        super(aParams.scene, aParams.x, aParams.y, aParams.texture);
 
         // variables
         this.currentScene = aParams.scene;

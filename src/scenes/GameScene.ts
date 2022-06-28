@@ -100,7 +100,7 @@ export class GameScene extends Phaser.Scene {
         this.foregroundLayer.setCollisionByProperty({ collide: true });
 
         //@ts-ignore
-        // this.animatedTiles.init(this.map)
+        this.animatedTiles.init(this.map)
 
     }
     createGameObjects() {

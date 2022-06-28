@@ -136,8 +136,8 @@
         "key": "hammer",
         "url": "./assets/sprites/hammer.png",
         "frameConfig": {
-          "frameWidth": 16,
-          "frameHeight": 16
+          "frameWidth": 18,
+          "frameHeight": 18
         }
       },
       {
