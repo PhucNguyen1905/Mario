@@ -23,6 +23,11 @@
         "url": "./assets/maps/newmaps/level3.json"
       },
       {
+        "type": "tilemapTiledJSON",
+        "key": "level4",
+        "url": "./assets/maps/newmaps/level4.json"
+      },
+      {
         "type": "image",
         "key": "tile",
         "url": "./assets/tiles/tile.png"
@@ -38,6 +43,15 @@
         "url": "./assets/sprites/mario.png",
         "frameConfig": {
           "frameWidth": 18,
+          "frameHeight": 32
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "princess",
+        "url": "./assets/sprites/princess.png",
+        "frameConfig": {
+          "frameWidth": 16,
           "frameHeight": 32
         }
       },

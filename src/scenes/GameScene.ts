@@ -11,6 +11,7 @@ import { Kappa } from '../objects/kappa';
 import { Mario } from '../objects/mario';
 import { Platform } from '../objects/platform';
 import { Portal } from '../objects/portal';
+import { Princess } from '../objects/princess';
 
 export class GameScene extends Phaser.Scene {
     // tilemap
@@ -25,6 +26,7 @@ export class GameScene extends Phaser.Scene {
     private collectibles: Phaser.GameObjects.Group;
     private enemies: Phaser.GameObjects.Group;
     private platforms: Phaser.GameObjects.Group;
+    private princess: Princess;
     private player: Mario;
     private portals: Phaser.GameObjects.Group;
 
@@ -203,6 +205,9 @@ export class GameScene extends Phaser.Scene {
 
     update(): void {
         this.player.update();
+        if (this.princess) {
+            this.princess.update();
+        }
     }
 
     private loadObjectsFromTilemap(): void {
@@ -240,6 +245,23 @@ export class GameScene extends Phaser.Scene {
                     y: object.y,
                     texture: 'mario'
                 });
+            }
+
+            if (object.type === 'princess') {
+                this.princess = new Princess({
+                    scene: this,
+                    x: object.x,
+                    y: object.y,
+                    texture: 'princess'
+                });
+                this.physics.add.collider(this.princess, this.foregroundLayer);
+                this.physics.add.collider(
+                    this.player,
+                    this.princess,
+                    this.handleMeetPrincess,
+                    null,
+                    this
+                );
             }
 
             if (object.type === 'goomba') {
@@ -524,5 +546,9 @@ export class GameScene extends Phaser.Scene {
             player.isOnPlatform = true;
             player.currentPlatform = platform;
         }
+    }
+
+    private handleMeetPrincess(player: Mario, princess: Princess) {
+        princess.isTouched = true;
     }
 }
