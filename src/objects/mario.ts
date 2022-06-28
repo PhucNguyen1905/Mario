@@ -190,7 +190,7 @@ export class Mario extends Phaser.GameObjects.Sprite {
             this.body.position.y += this.currentPlatform.body.velocity.y;
 
             if (this.y >= this.currentPlatform.startY - this.currentPlatform.height / 2 && this.currentPlatform.type == 'up') {
-                this.y -= 2
+                this.y -= 6
             }
             this.isOnPlatform = false;
             this.currentPlatform = null;
@@ -249,8 +249,9 @@ export class Mario extends Phaser.GameObjects.Sprite {
                     } else {
                         this.setFrame(6);
                     }
-
                 }
+
+
             }
         }
     }
