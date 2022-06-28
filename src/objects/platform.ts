@@ -8,6 +8,8 @@ export class Platform extends Phaser.GameObjects.Image {
     private tweenProps: any;
     private previousX: number;
     private previousY: number;
+    public startY: number;
+    public type: string;
 
     constructor(aParams: IPlatformConstructor) {
         super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
@@ -17,6 +19,12 @@ export class Platform extends Phaser.GameObjects.Image {
         this.tweenProps = aParams.tweenProps;
         this.previousX = aParams.x;
         this.previousY = aParams.y;
+        this.startY = aParams.y;
+        if (aParams.frame == 1) {
+            this.type = 'up'
+        } else {
+            this.type = 'left'
+        }
 
         this.initImage();
         this.initTween();

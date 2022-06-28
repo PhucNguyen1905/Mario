@@ -179,14 +179,19 @@ export class Mario extends Phaser.GameObjects.Sprite {
         }
 
     }
+
     private handleThrowFireballInput() {
         this.currentScene.input.keyboard.on('keyup-X', this.throwFireball, this)
     }
+
     public handelStandingOnPlatform() {
         if (this.isOnPlatform && this.currentPlatform) {
             this.body.position.x += this.currentPlatform.body.velocity.x;
-            this.body.position.y += this.currentPlatform.body.velocity.y - 0.1;
+            this.body.position.y += this.currentPlatform.body.velocity.y;
 
+            if (this.y >= this.currentPlatform.startY - this.currentPlatform.height / 2 && this.currentPlatform.type == 'up') {
+                this.y -= 2
+            }
             this.isOnPlatform = false;
             this.currentPlatform = null;
         }

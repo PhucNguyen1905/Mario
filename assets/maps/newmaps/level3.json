@@ -5413,6 +5413,26 @@
                          "type":"bool",
                          "value":true
                         }]
+                }, 
+                {
+                 "animation":[
+                        {
+                         "duration":150,
+                         "tileid":2948
+                        }, 
+                        {
+                         "duration":150,
+                         "tileid":2949
+                        }, 
+                        {
+                         "duration":150,
+                         "tileid":2950
+                        }, 
+                        {
+                         "duration":150,
+                         "tileid":2951
+                        }],
+                 "id":4260
                 }],
          "tilewidth":16
         }],
